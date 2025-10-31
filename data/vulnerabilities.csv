@@ -1,0 +1,3 @@
+cve_id,asset_id,severity,cvss_score,description
+CVE-2024-1234,web01,High,8.9,Remote code execution vulnerability in Apache
+CVE-2023-5421,db01,Critical,9.8,Privilege escalation via kernel exploit

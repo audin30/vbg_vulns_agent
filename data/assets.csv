@@ -1,0 +1,3 @@
+asset_id,ip,owner,criticality
+web01,10.0.0.10,IT Operations,High
+db01,10.0.1.5,Finance,Critical

@@ -1,0 +1,562 @@
+2025-10-30 23:11:04,097 [INFO] ✅ Vulnerability Agent ready! Type 'exit' or 'quit' to stop.
+2025-10-30 23:11:15,384 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 404 Not Found"
+2025-10-30 23:11:15,386 [ERROR] Unexpected error during query: Error code: 404 - {'error': {'message': 'The model `gpt-4-turbo` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+Traceback (most recent call last):
+  File "/Users/secu/Desktop/Git/vbg_vuln_agent/app.py", line 97, in <module>
+    response = agent_executor.invoke({"input": query})
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/chains/base.py", line 165, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1625, in _call
+    next_step_output = self._take_next_step(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1325, in _take_next_step
+    list(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1352, in _iter_next_step
+    output = self._action_agent.plan(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 455, in plan
+    for chunk in self.runnable.stream(inputs, config={"callbacks": callbacks}):
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 3650, in stream
+    yield from self.transform(iter([input]), config, **kwargs)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 3636, in transform
+    yield from self._transform_stream_with_config(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 2372, in _transform_stream_with_config
+    chunk: Output = context.run(next, iterator)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 3595, in _transform
+    yield from final_pipeline
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 1571, in transform
+    for ichunk in input:
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 5927, in transform
+    yield from self.bound.transform(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 1589, in transform
+    yield from self.stream(final, config, **kwargs)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 522, in stream
+    for chunk in self._stream(input_messages, stop=stop, **kwargs):
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1123, in _stream
+    response = self.client.create(**payload)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1156, in create
+    return self._post(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `gpt-4-turbo` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-10-30 23:11:29,344 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 404 Not Found"
+2025-10-30 23:11:29,346 [ERROR] Unexpected error during query: Error code: 404 - {'error': {'message': 'The model `gpt-4-turbo` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+Traceback (most recent call last):
+  File "/Users/secu/Desktop/Git/vbg_vuln_agent/app.py", line 97, in <module>
+    response = agent_executor.invoke({"input": query})
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/chains/base.py", line 165, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1625, in _call
+    next_step_output = self._take_next_step(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1325, in _take_next_step
+    list(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1352, in _iter_next_step
+    output = self._action_agent.plan(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 455, in plan
+    for chunk in self.runnable.stream(inputs, config={"callbacks": callbacks}):
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 3650, in stream
+    yield from self.transform(iter([input]), config, **kwargs)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 3636, in transform
+    yield from self._transform_stream_with_config(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 2372, in _transform_stream_with_config
+    chunk: Output = context.run(next, iterator)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 3595, in _transform
+    yield from final_pipeline
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 1571, in transform
+    for ichunk in input:
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 5927, in transform
+    yield from self.bound.transform(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 1589, in transform
+    yield from self.stream(final, config, **kwargs)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 522, in stream
+    for chunk in self._stream(input_messages, stop=stop, **kwargs):
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1123, in _stream
+    response = self.client.create(**payload)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1156, in create
+    return self._post(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `gpt-4-turbo` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-10-30 23:12:34,508 [INFO] ✅ Vulnerability Agent ready! Type 'exit' or 'quit' to stop.
+2025-10-30 23:12:44,916 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 404 Not Found"
+2025-10-30 23:12:44,920 [ERROR] Unexpected error during query: Error code: 404 - {'error': {'message': 'The model `gpt-4-turbo` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+Traceback (most recent call last):
+  File "/Users/secu/Desktop/Git/vbg_vuln_agent/app.py", line 137, in <module>
+    response = agent_executor.invoke({"input": query})
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/chains/base.py", line 165, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1625, in _call
+    next_step_output = self._take_next_step(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1325, in _take_next_step
+    list(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1352, in _iter_next_step
+    output = self._action_agent.plan(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 455, in plan
+    for chunk in self.runnable.stream(inputs, config={"callbacks": callbacks}):
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 3650, in stream
+    yield from self.transform(iter([input]), config, **kwargs)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 3636, in transform
+    yield from self._transform_stream_with_config(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 2372, in _transform_stream_with_config
+    chunk: Output = context.run(next, iterator)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 3595, in _transform
+    yield from final_pipeline
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 1571, in transform
+    for ichunk in input:
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 5927, in transform
+    yield from self.bound.transform(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 1589, in transform
+    yield from self.stream(final, config, **kwargs)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 522, in stream
+    for chunk in self._stream(input_messages, stop=stop, **kwargs):
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1123, in _stream
+    response = self.client.create(**payload)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1156, in create
+    return self._post(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `gpt-4-turbo` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-10-30 23:12:53,619 [INFO] 👋 Exiting agent. Goodbye!
+2025-10-30 23:13:09,068 [INFO] ✅ Vulnerability Agent ready! Type 'exit' or 'quit' to stop.
+2025-10-30 23:13:13,991 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 404 Not Found"
+2025-10-30 23:13:13,994 [ERROR] Unexpected error during query: Error code: 404 - {'error': {'message': 'The model `gpt-4-turbo` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+Traceback (most recent call last):
+  File "/Users/secu/Desktop/Git/vbg_vuln_agent/app.py", line 137, in <module>
+    response = agent_executor.invoke({"input": query})
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/chains/base.py", line 165, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1625, in _call
+    next_step_output = self._take_next_step(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1325, in _take_next_step
+    list(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1352, in _iter_next_step
+    output = self._action_agent.plan(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 455, in plan
+    for chunk in self.runnable.stream(inputs, config={"callbacks": callbacks}):
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 3650, in stream
+    yield from self.transform(iter([input]), config, **kwargs)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 3636, in transform
+    yield from self._transform_stream_with_config(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 2372, in _transform_stream_with_config
+    chunk: Output = context.run(next, iterator)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 3595, in _transform
+    yield from final_pipeline
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 1571, in transform
+    for ichunk in input:
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 5927, in transform
+    yield from self.bound.transform(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 1589, in transform
+    yield from self.stream(final, config, **kwargs)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 522, in stream
+    for chunk in self._stream(input_messages, stop=stop, **kwargs):
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1123, in _stream
+    response = self.client.create(**payload)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1156, in create
+    return self._post(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `gpt-4-turbo` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-10-30 23:14:35,422 [INFO] ✅ Vulnerability Agent ready! Type 'exit' or 'quit' to stop.
+2025-10-30 23:14:39,934 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 404 Not Found"
+2025-10-30 23:14:39,936 [ERROR] Unexpected error during query: Error code: 404 - {'error': {'message': 'The model `gpt-4-mini` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+Traceback (most recent call last):
+  File "/Users/secu/Desktop/Git/vbg_vuln_agent/app.py", line 137, in <module>
+    response = agent_executor.invoke({"input": query})
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/chains/base.py", line 165, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1625, in _call
+    next_step_output = self._take_next_step(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1325, in _take_next_step
+    list(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1352, in _iter_next_step
+    output = self._action_agent.plan(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 455, in plan
+    for chunk in self.runnable.stream(inputs, config={"callbacks": callbacks}):
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 3650, in stream
+    yield from self.transform(iter([input]), config, **kwargs)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 3636, in transform
+    yield from self._transform_stream_with_config(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 2372, in _transform_stream_with_config
+    chunk: Output = context.run(next, iterator)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 3595, in _transform
+    yield from final_pipeline
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 1571, in transform
+    for ichunk in input:
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 5927, in transform
+    yield from self.bound.transform(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 1589, in transform
+    yield from self.stream(final, config, **kwargs)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 522, in stream
+    for chunk in self._stream(input_messages, stop=stop, **kwargs):
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1123, in _stream
+    response = self.client.create(**payload)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1156, in create
+    return self._post(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `gpt-4-mini` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-10-30 23:14:53,529 [INFO] ✅ Vulnerability Agent ready! Type 'exit' or 'quit' to stop.
+2025-10-30 23:14:58,441 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 404 Not Found"
+2025-10-30 23:14:58,444 [ERROR] Unexpected error during query: Error code: 404 - {'error': {'message': 'The model `gpt-40-mini` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+Traceback (most recent call last):
+  File "/Users/secu/Desktop/Git/vbg_vuln_agent/app.py", line 137, in <module>
+    response = agent_executor.invoke({"input": query})
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/chains/base.py", line 165, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1625, in _call
+    next_step_output = self._take_next_step(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1325, in _take_next_step
+    list(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1352, in _iter_next_step
+    output = self._action_agent.plan(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 455, in plan
+    for chunk in self.runnable.stream(inputs, config={"callbacks": callbacks}):
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 3650, in stream
+    yield from self.transform(iter([input]), config, **kwargs)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 3636, in transform
+    yield from self._transform_stream_with_config(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 2372, in _transform_stream_with_config
+    chunk: Output = context.run(next, iterator)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 3595, in _transform
+    yield from final_pipeline
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 1571, in transform
+    for ichunk in input:
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 5927, in transform
+    yield from self.bound.transform(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 1589, in transform
+    yield from self.stream(final, config, **kwargs)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 522, in stream
+    for chunk in self._stream(input_messages, stop=stop, **kwargs):
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1123, in _stream
+    response = self.client.create(**payload)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1156, in create
+    return self._post(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `gpt-40-mini` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-10-30 23:57:36,256 [INFO] ✅ Vulnerability Agent ready! Type 'exit' or 'quit' to stop.
+2025-10-30 23:57:43,412 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-10-30 23:57:43,415 [ERROR] Unexpected error during query: Error code: 400 - {'error': {'message': "Unsupported parameter: 'stop' is not supported with this model.", 'type': 'invalid_request_error', 'param': 'stop', 'code': 'unsupported_parameter'}}
+Traceback (most recent call last):
+  File "/Users/secu/Desktop/Git/vbg_vuln_agent/app.py", line 137, in <module>
+    response = agent_executor.invoke({"input": query})
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/chains/base.py", line 165, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1625, in _call
+    next_step_output = self._take_next_step(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1325, in _take_next_step
+    list(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1352, in _iter_next_step
+    output = self._action_agent.plan(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 455, in plan
+    for chunk in self.runnable.stream(inputs, config={"callbacks": callbacks}):
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 3650, in stream
+    yield from self.transform(iter([input]), config, **kwargs)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 3636, in transform
+    yield from self._transform_stream_with_config(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 2372, in _transform_stream_with_config
+    chunk: Output = context.run(next, iterator)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 3595, in _transform
+    yield from final_pipeline
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 1571, in transform
+    for ichunk in input:
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 5927, in transform
+    yield from self.bound.transform(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 1589, in transform
+    yield from self.stream(final, config, **kwargs)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 522, in stream
+    for chunk in self._stream(input_messages, stop=stop, **kwargs):
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1123, in _stream
+    response = self.client.create(**payload)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1156, in create
+    return self._post(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Unsupported parameter: 'stop' is not supported with this model.", 'type': 'invalid_request_error', 'param': 'stop', 'code': 'unsupported_parameter'}}
+2025-10-30 23:58:12,466 [INFO] ✅ Vulnerability Agent ready! Type 'exit' or 'quit' to stop.
+2025-10-30 23:58:21,606 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-10-30 23:58:21,609 [ERROR] Unexpected error during query: Error code: 400 - {'error': {'message': "Unsupported parameter: 'stop' is not supported with this model.", 'type': 'invalid_request_error', 'param': 'stop', 'code': 'unsupported_parameter'}}
+Traceback (most recent call last):
+  File "/Users/secu/Desktop/Git/vbg_vuln_agent/app.py", line 137, in <module>
+    response = agent_executor.invoke({"input": query})
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/chains/base.py", line 165, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1625, in _call
+    next_step_output = self._take_next_step(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1325, in _take_next_step
+    list(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1352, in _iter_next_step
+    output = self._action_agent.plan(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 455, in plan
+    for chunk in self.runnable.stream(inputs, config={"callbacks": callbacks}):
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 3650, in stream
+    yield from self.transform(iter([input]), config, **kwargs)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 3636, in transform
+    yield from self._transform_stream_with_config(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 2372, in _transform_stream_with_config
+    chunk: Output = context.run(next, iterator)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 3595, in _transform
+    yield from final_pipeline
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 1571, in transform
+    for ichunk in input:
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 5927, in transform
+    yield from self.bound.transform(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 1589, in transform
+    yield from self.stream(final, config, **kwargs)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 522, in stream
+    for chunk in self._stream(input_messages, stop=stop, **kwargs):
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1123, in _stream
+    response = self.client.create(**payload)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1156, in create
+    return self._post(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Unsupported parameter: 'stop' is not supported with this model.", 'type': 'invalid_request_error', 'param': 'stop', 'code': 'unsupported_parameter'}}
+2025-10-30 23:59:41,518 [INFO] ✅ Vulnerability Agent ready! Type 'exit' or 'quit' to stop.
+2025-10-30 23:59:47,623 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 404 Not Found"
+2025-10-30 23:59:47,627 [ERROR] Unexpected error during query: Error code: 404 - {'error': {'message': 'The model `gpt-40-mini` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+Traceback (most recent call last):
+  File "/Users/secu/Desktop/Git/vbg_vuln_agent/app.py", line 137, in <module>
+    response = agent_executor.invoke({"input": query})
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/chains/base.py", line 165, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1625, in _call
+    next_step_output = self._take_next_step(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1325, in _take_next_step
+    list(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1352, in _iter_next_step
+    output = self._action_agent.plan(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 455, in plan
+    for chunk in self.runnable.stream(inputs, config={"callbacks": callbacks}):
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 3650, in stream
+    yield from self.transform(iter([input]), config, **kwargs)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 3636, in transform
+    yield from self._transform_stream_with_config(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 2372, in _transform_stream_with_config
+    chunk: Output = context.run(next, iterator)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 3595, in _transform
+    yield from final_pipeline
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 1571, in transform
+    for ichunk in input:
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 5927, in transform
+    yield from self.bound.transform(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 1589, in transform
+    yield from self.stream(final, config, **kwargs)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 522, in stream
+    for chunk in self._stream(input_messages, stop=stop, **kwargs):
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1123, in _stream
+    response = self.client.create(**payload)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1156, in create
+    return self._post(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `gpt-40-mini` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-10-31 00:18:40,881 [INFO] ✅ Vulnerability Agent ready! Type 'exit' or 'quit' to stop.
+2025-10-31 00:18:45,382 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 404 Not Found"
+2025-10-31 00:18:45,385 [ERROR] Unexpected error during query: Error code: 404 - {'error': {'message': 'The model `gpt-40-mini` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+Traceback (most recent call last):
+  File "/Users/secu/Desktop/Git/vbg_vuln_agent/app.py", line 137, in <module>
+    response = agent_executor.invoke({"input": query})
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/chains/base.py", line 165, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1625, in _call
+    next_step_output = self._take_next_step(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1325, in _take_next_step
+    list(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1352, in _iter_next_step
+    output = self._action_agent.plan(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 455, in plan
+    for chunk in self.runnable.stream(inputs, config={"callbacks": callbacks}):
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 3650, in stream
+    yield from self.transform(iter([input]), config, **kwargs)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 3636, in transform
+    yield from self._transform_stream_with_config(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 2372, in _transform_stream_with_config
+    chunk: Output = context.run(next, iterator)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 3595, in _transform
+    yield from final_pipeline
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 1571, in transform
+    for ichunk in input:
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 5927, in transform
+    yield from self.bound.transform(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 1589, in transform
+    yield from self.stream(final, config, **kwargs)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 522, in stream
+    for chunk in self._stream(input_messages, stop=stop, **kwargs):
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1123, in _stream
+    response = self.client.create(**payload)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1156, in create
+    return self._post(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `gpt-40-mini` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-10-31 00:20:23,935 [INFO] ✅ Vulnerability Agent ready! Type 'exit' or 'quit' to stop.
+2025-10-31 00:20:28,298 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-10-31 00:20:28,302 [ERROR] Unexpected error during query: Error code: 400 - {'error': {'message': "Unsupported parameter: 'stop' is not supported with this model.", 'type': 'invalid_request_error', 'param': 'stop', 'code': 'unsupported_parameter'}}
+Traceback (most recent call last):
+  File "/Users/secu/Desktop/Git/vbg_vuln_agent/app.py", line 137, in <module>
+    response = agent_executor.invoke({"input": query})
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/chains/base.py", line 165, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1625, in _call
+    next_step_output = self._take_next_step(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1325, in _take_next_step
+    list(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1352, in _iter_next_step
+    output = self._action_agent.plan(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 455, in plan
+    for chunk in self.runnable.stream(inputs, config={"callbacks": callbacks}):
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 3650, in stream
+    yield from self.transform(iter([input]), config, **kwargs)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 3636, in transform
+    yield from self._transform_stream_with_config(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 2372, in _transform_stream_with_config
+    chunk: Output = context.run(next, iterator)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 3595, in _transform
+    yield from final_pipeline
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 1571, in transform
+    for ichunk in input:
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 5927, in transform
+    yield from self.bound.transform(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 1589, in transform
+    yield from self.stream(final, config, **kwargs)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 522, in stream
+    for chunk in self._stream(input_messages, stop=stop, **kwargs):
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1123, in _stream
+    response = self.client.create(**payload)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1156, in create
+    return self._post(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Unsupported parameter: 'stop' is not supported with this model.", 'type': 'invalid_request_error', 'param': 'stop', 'code': 'unsupported_parameter'}}
+2025-10-31 00:20:42,238 [INFO] ✅ Vulnerability Agent ready! Type 'exit' or 'quit' to stop.
+2025-10-31 00:20:46,835 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-10-31 00:20:46,839 [ERROR] Unexpected error during query: Error code: 400 - {'error': {'message': "Unsupported parameter: 'stop' is not supported with this model.", 'type': 'invalid_request_error', 'param': 'stop', 'code': 'unsupported_parameter'}}
+Traceback (most recent call last):
+  File "/Users/secu/Desktop/Git/vbg_vuln_agent/app.py", line 137, in <module>
+    response = agent_executor.invoke({"input": query})
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/chains/base.py", line 165, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1625, in _call
+    next_step_output = self._take_next_step(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1325, in _take_next_step
+    list(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1352, in _iter_next_step
+    output = self._action_agent.plan(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 455, in plan
+    for chunk in self.runnable.stream(inputs, config={"callbacks": callbacks}):
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 3650, in stream
+    yield from self.transform(iter([input]), config, **kwargs)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 3636, in transform
+    yield from self._transform_stream_with_config(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 2372, in _transform_stream_with_config
+    chunk: Output = context.run(next, iterator)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 3595, in _transform
+    yield from final_pipeline
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 1571, in transform
+    for ichunk in input:
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 5927, in transform
+    yield from self.bound.transform(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 1589, in transform
+    yield from self.stream(final, config, **kwargs)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 522, in stream
+    for chunk in self._stream(input_messages, stop=stop, **kwargs):
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1123, in _stream
+    response = self.client.create(**payload)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1156, in create
+    return self._post(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Unsupported parameter: 'stop' is not supported with this model.", 'type': 'invalid_request_error', 'param': 'stop', 'code': 'unsupported_parameter'}}
+2025-10-31 00:34:09,374 [INFO] ✅ Vulnerability Agent ready! Type 'exit' or 'quit' to stop.
+2025-10-31 00:34:13,929 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 404 Not Found"
+2025-10-31 00:34:13,932 [ERROR] Unexpected error during query: Error code: 404 - {'error': {'message': 'The model `gpt-40-mini` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+Traceback (most recent call last):
+  File "/Users/secu/Desktop/Git/vbg_vuln_agent/app.py", line 138, in <module>
+    response = agent_executor.invoke({"input": query})
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/chains/base.py", line 165, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1625, in _call
+    next_step_output = self._take_next_step(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1325, in _take_next_step
+    list(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1352, in _iter_next_step
+    output = self._action_agent.plan(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 455, in plan
+    for chunk in self.runnable.stream(inputs, config={"callbacks": callbacks}):
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 3650, in stream
+    yield from self.transform(iter([input]), config, **kwargs)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 3636, in transform
+    yield from self._transform_stream_with_config(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 2372, in _transform_stream_with_config
+    chunk: Output = context.run(next, iterator)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 3595, in _transform
+    yield from final_pipeline
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 1571, in transform
+    for ichunk in input:
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 5927, in transform
+    yield from self.bound.transform(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 1589, in transform
+    yield from self.stream(final, config, **kwargs)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 522, in stream
+    for chunk in self._stream(input_messages, stop=stop, **kwargs):
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1123, in _stream
+    response = self.client.create(**payload)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1156, in create
+    return self._post(
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/Users/secu/Library/Python/3.9/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `gpt-40-mini` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-10-31 00:36:35,663 [INFO] ✅ Vulnerability Agent ready! Type 'exit' or 'quit' to stop.
+2025-10-31 00:36:40,439 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-31 00:36:41,648 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
