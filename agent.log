@@ -560,3 +560,4 @@ openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `gpt-40
 2025-10-31 00:36:35,663 [INFO] ✅ Vulnerability Agent ready! Type 'exit' or 'quit' to stop.
 2025-10-31 00:36:40,439 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 2025-10-31 00:36:41,648 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-31 16:45:57,005 [INFO] ✅ Vulnerability Agent ready! Type 'exit' or 'quit' to stop.
