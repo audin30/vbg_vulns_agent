@@ -13,7 +13,7 @@
 
 ## 🧩 Overview
 
-**vbg_vulns_agent** is an intelligent **LLM-driven Vulnerability Management Assistant** that helps security teams analyze, correlate, and prioritize vulnerabilities using natural language.  
+**vbg_vulns_agent** is an intelligent **LLM-driven Vulnerability Management Assistant** that helps security teams analyze, correlate, and prioritize vulnerabilities using natural language.
 
 By combining vulnerability data (e.g., Tenable, OpenVAS), asset inventories (e.g., phpIPAM), and subnet information, it provides clear, AI-assisted insights into your organization’s risk posture.
 
@@ -21,12 +21,13 @@ By combining vulnerability data (e.g., Tenable, OpenVAS), asset inventories (e.g
 
 ## 🚀 Key Features
 
-- 🔍 **Data Correlation** — Merges vulnerability, asset, and subnet information into one view.  
+- 🔍 **Data Correlation** — Merges vulnerability, asset, and subnet information into one unified view.  
 - 🤖 **AI Query Interface** — Ask natural-language questions about your vulnerabilities.  
 - 🔄 **Auto-Reloading Data** — Automatically detects and reloads CSV updates in real time.  
-- 🧠 **LLM Reasoning** — Uses OpenAI’s `gpt-4o-mini` model for accurate and efficient responses.  
-- 🪵 **Logging & Error Handling** — Tracks reloads, errors, and data integrity in real-time logs.  
-- 🧱 **Modular Design** — Extendable for new data sources or AI-driven enrichment.
+- 🧠 **LLM Reasoning** — Uses OpenAI’s cost-effective `gpt-4o-mini` model.  
+- 🧩 **Multi-CVE Support** — Each asset can list multiple CVEs and have them grouped automatically.  
+- 🪵 **Logging & Error Handling** — Tracks reloads, data integrity, and operational messages.  
+- 🧱 **Modular Design** — Easily extendable for new data sources or AI-driven enrichment.
 
 ---
 
@@ -36,10 +37,10 @@ By combining vulnerability data (e.g., Tenable, OpenVAS), asset inventories (e.g
 vbg_vuln_agent/
 ├── app.py                  # Main CLI interface and AI agent
 ├── tools/
-│   ├── data_tools.py       # Handles data loading, merging, and subnet correlation
+│   ├── data_tools.py       # Handles data loading, merging, and subnet correlation (multi-CVE aware)
 │   └── analyzer.py         # Provides summarization and prioritization logic
 ├── data/
-│   ├── vulnerabilities.csv # Sample vulnerability data
+│   ├── vulnerabilities.csv # Sample vulnerability data (supports multiple CVEs per row)
 │   ├── assets.csv          # Sample asset data
 │   └── subnets.csv         # Sample subnet definitions
 ├── requirements.txt        # Dependencies
@@ -95,7 +96,8 @@ python app.py
 
 Then ask natural language queries like:
 ```
-Show all critical assets and their vulnerabilities.
+Summarize my asset distribution.
+List all critical assets and their CVEs.
 Summarize vulnerabilities by severity and subnet.
 ```
 
@@ -115,8 +117,8 @@ Critical    External   1
 ### `data/vulnerabilities.csv`
 ```csv
 cve_id,asset_id,severity,cvss_score,description
-CVE-2024-1234,web01,High,8.9,Remote code execution in Apache
-CVE-2023-5421,db01,Critical,9.8,Privilege escalation in kernel
+CVE-2024-1234;CVE-2024-5678,web01,High,8.9,Multiple Apache RCE vulnerabilities
+CVE-2023-5421;CVE-2023-7890,db01,Critical,9.8,Kernel privilege escalation and buffer overflow
 ```
 
 ### `data/assets.csv`
@@ -157,7 +159,7 @@ The application logs to both the console and `agent.log`, recording:
 ## 🤝 Credits & Collaboration
 
 This project was **designed and developed by [Juan Janolo (audin30)](https://github.com/audin30)**  
-in close **collaboration with ChatGPT and OpenAI**, combining security domain expertise with state-of-the-art AI technology.
+in close **collaboration with ChatGPT and OpenAI**, combining cybersecurity expertise with state-of-the-art AI technology.
 
 > Together, the goal is to make vulnerability management more intelligent, contextual, and efficient.
 
