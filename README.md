@@ -1,3 +1,5 @@
+This is my first step in creating something using ChatGPT only for the coding portion.
+
 # 🛡️ VBG Vulnerability Intelligence Agent
 
 An AI-powered **Vulnerability Management Agent** that analyzes, summarizes, and prioritizes security findings from multiple sources (Wiz, Tenable, IPAM, Firewall rules, etc.) — dynamically adjusting risk based on **network exposure** and **contextual intelligence**.
