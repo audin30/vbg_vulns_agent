@@ -29,6 +29,7 @@ By combining vulnerability data (e.g., Tenable, OpenVAS), asset inventories (e.g
 - 📊 **Supports Raw Data Headers** — Reads real-world dataset headers like `asset.name`, `definition.cve`, and `definition.cvss3.base_score`.  
 - 🪵 **Logging & Error Handling** — Tracks reloads, data integrity, and operational messages.  
 - 🧱 **Modular Design** — Easily extendable for new data sources or AI-driven enrichment.
+- 🔥 **Dynamic Severity Adjustment** — Automatically increases vulnerability severity when risky ports (e.g., SSH, RDP, MySQL) are exposed according to `data/firewall_rules.csv`.
 
 ---
 
@@ -136,6 +137,14 @@ subnet,type,description
 10.0.0.0/24,Internal,Corporate Web Servers
 172.16.0.0/16,External,Public Systems
 ```
+### `data/firewall_rules.csv`
+```csv
+asset_id,port,action,description
+web01,22,allow,SSH open to internet
+web01,443,allow,HTTPS allowed
+web01,3306,deny,MySQL blocked
+db01,3389,allow,RDP exposed
+
 
 > The program automatically maps raw headers to normalized fields (`asset.name` → `asset_id`, `definition.cve` → `cve_id`, etc.) for internal use.
 

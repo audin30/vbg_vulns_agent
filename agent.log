@@ -632,3 +632,8 @@ KeyError: 'asset_id'
 2025-11-02 09:50:10,399 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 2025-11-02 09:50:20,017 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 2025-11-02 09:50:22,581 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-02 18:49:47,385 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-02 18:50:05,121 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-02 18:50:06,167 [INFO] Exported 414 rows to output/vulns_High_414rows_2025-11-02_185006.csv
+2025-11-02 18:50:06,196 [INFO] Listed vulnerabilities (High) | Rows: 414
+2025-11-02 18:50:08,038 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
