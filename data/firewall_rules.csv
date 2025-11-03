@@ -1,5 +1,0 @@
-asset_id,port,action,description
-web01,22,allow,SSH open to internet
-web01,443,allow,HTTPS allowed
-web01,3306,deny,MySQL blocked
-db01,3389,allow,RDP exposed
