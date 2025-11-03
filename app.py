@@ -28,6 +28,10 @@ df = correlate_data()
 data_files = ["data/vulnerabilities.csv", "data/assets.csv", "data/subnets.csv"]
 last_modified = {f: os.path.getmtime(f) for f in data_files if os.path.exists(f)}
 
+num_escalated = len(df[df["escalation_reason"].str.len() > 0])
+if num_escalated > 0:
+    print(f"\n⚠️ {num_escalated} vulnerabilities had their severity escalated due to open risky ports.\n")
+
 def refresh_data_if_changed():
     global df, last_modified
     changed = False
@@ -82,71 +86,93 @@ def get_asset_summary(_):
 
 def list_vulnerabilities_by_severity(query: str):
     """
-    List vulnerabilities filtered by one or more severities, colorized and auto-exported.
+    List vulnerabilities by severity, with optional CSV export upon user request.
+    Example queries:
+        "Show high vulnerabilities"
+        "List critical and high vulnerabilities"
+        "Export high and critical vulnerabilities to CSV"
     """
     try:
         refresh_data_if_changed()
+        
+        # --- Detect severity levels ---
         severity_keywords = ["critical", "high", "medium", "low", "info", "informational"]
         requested = [s.capitalize() for s in severity_keywords if s in query.lower()]
-
+        
         if not requested:
             return "Please specify one or more severities (e.g., High, Critical, Medium, Low)."
-
+        
+        # --- Detect export intent ---
+        export_requested = any(word in query.lower() for word in ["export", "save", "csv", "write"])
+        
+        # --- Filter data ---
         filtered = df[df["severity"].str.lower().isin([s.lower() for s in requested])]
         if filtered.empty:
             return f"No vulnerabilities found with severities: {', '.join(requested)}."
-
-        os.makedirs("output", exist_ok=True)
-        row_count = len(filtered)
-        timestamp = datetime.now().strftime("%Y-%m-%d_%H%M%S")
-        safe_sev = "_".join(requested)
-        export_path = f"output/vulns_{safe_sev}_{row_count}rows_{timestamp}.csv"
-        filtered.to_csv(export_path, index=False)
-        logging.info(f"Exported {row_count} rows to {export_path}")
-
+        
+        # --- Display columns ---
         display_cols = [
-            col for col in ["asset_id", "cve_id", "severity", "cvss_score", "ip", "owner"]
+            col for col in ["asset_id", "cve_id", "severity", "cvss_score", "ip", "owner", "escalation_reason"]
             if col in filtered.columns
         ]
+        
+        # --- Sort results ---
         sort_cols = ["severity"]
         if "cvss_score" in filtered.columns:
             sort_cols.append("cvss_score")
         filtered = filtered.sort_values(by=sort_cols, ascending=[True, False])
-
+        
+        # --- Colorize severity ---
         def colorize(sev):
             s = sev.lower()
             if s == "critical":
-                return f"\033[91m{s.capitalize()}\033[0m"
+                return f"\033[91m{s.capitalize()}\033[0m"  # red
             elif s == "high":
-                return f"\033[93m{s.capitalize()}\033[0m"
+                return f"\033[93m{s.capitalize()}\033[0m"  # yellow
             elif s == "medium":
-                return f"\033[33m{s.capitalize()}\033[0m"
+                return f"\033[33m{s.capitalize()}\033[0m"  # dim yellow
             elif s == "low":
-                return f"\033[94m{s.capitalize()}\033[0m"
+                return f"\033[94m{s.capitalize()}\033[0m"  # blue
             elif s in ["info", "informational"]:
-                return f"\033[90m{s.capitalize()}\033[0m"
+                return f"\033[90m{s.capitalize()}\033[0m"  # gray
             return sev
-
+        
         if "severity" in filtered.columns:
             filtered["severity"] = filtered["severity"].apply(colorize)
-
+            
+        # --- Create pretty table ---
         table = tabulate(
             filtered[display_cols],
             headers=[c.capitalize() for c in display_cols],
             tablefmt="fancy_grid",
             showindex=False,
         )
-
-        result = (
-            f"Vulnerabilities with severities ({', '.join(requested)}):\n\n{table}\n\n"
-            f"💾 Exported \033[92m{row_count}\033[0m rows to: \033[96m{export_path}\033[0m"
-        )
-        logging.info(f"Listed vulnerabilities ({', '.join(requested)}) | Rows: {row_count}")
+        
+        result = f"Vulnerabilities with severities ({', '.join(requested)}):\n\n{table}"
+        
+        # --- Optional export ---
+        if export_requested:
+            os.makedirs("output", exist_ok=True)
+            row_count = len(filtered)
+            timestamp = datetime.now().strftime("%Y-%m-%d_%H%M%S")
+            safe_sev = "_".join(requested)
+            export_path = f"output/vulns_{safe_sev}_{row_count}rows_{timestamp}.csv"
+            
+            # Export with escalation_reason included
+            filtered.to_csv(export_path, index=False)
+            result += f"\n\n💾 Exported \033[92m{row_count}\033[0m rows to: \033[96m{export_path}\033[0m"
+            logging.info(f"Exported {row_count} rows to {export_path}")
+            
+        # --- Add escalation summary ---
+        num_escalated = len(filtered[filtered["escalation_reason"].str.len() > 0])
+        if num_escalated > 0:
+            result += f"\n\n⚠️ {num_escalated} vulnerabilities escalated due to risky open ports."
+            
         return result
-
+    
     except Exception as e:
-        logging.exception(f"Error filtering vulnerabilities: {e}")
-        return f"Error filtering vulnerabilities: {e}"
+        logging.exception(f"Error filtering vulnerabilities by severity: {e}")
+        return f"Error filtering vulnerabilities by severity: {e}"
 
 tools = [
     Tool(name="Summarize Vulnerabilities", func=get_vulnerability_summary, description="Summarizes vulnerabilities by severity and subnet."),

@@ -1,183 +1,154 @@
-# 🧠 vbg_vulns_agent
-*AI-Powered Vulnerability Management Assistant*
+# 🛡️ VBG Vulnerability Intelligence Agent
 
-[![Python](https://img.shields.io/badge/Python-3.12+-blue.svg)](https://www.python.org/)
-[![LangChain](https://img.shields.io/badge/LangChain-Framework-efefef.svg?logo=chainlink&logoColor=blue)](https://www.langchain.com/)
-[![OpenAI](https://img.shields.io/badge/OpenAI-gpt--4o--mini-412991.svg?logo=openai&logoColor=white)](https://openai.com/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+An AI-powered **Vulnerability Management Agent** that analyzes, summarizes, and prioritizes security findings from multiple sources (Wiz, Tenable, IPAM, Firewall rules, etc.) — dynamically adjusting risk based on **network exposure** and **contextual intelligence**.
 
-> Developed in **collaboration with ChatGPT and OpenAI**,  
-> designed and built by **Juan Janolo ([@audin30](https://github.com/audin30))**.
+Developed in collaboration with **ChatGPT + OpenAI**,  
+designed and built by **Juan Janolo**.
 
 ---
 
-## 🧩 Overview
+## 🚀 Features
 
-**vbg_vulns_agent** is an intelligent **LLM-driven Vulnerability Management Assistant** that helps security teams analyze, correlate, and prioritize vulnerabilities using natural language.
-
-By combining vulnerability data (e.g., Tenable, OpenVAS), asset inventories (e.g., phpIPAM), and subnet information, it provides clear, AI-assisted insights into your organization’s risk posture.
-
----
-
-## 🚀 Key Features
-
-- 🔍 **Data Correlation** — Merges vulnerability, asset, and subnet information into one unified view.  
-- 🤖 **AI Query Interface** — Ask natural-language questions about your vulnerabilities.  
-- 🔄 **Auto-Reloading Data** — Automatically detects and reloads CSV updates in real time.  
-- 🧠 **LLM Reasoning** — Uses OpenAI’s cost-effective `gpt-4o-mini` model.  
-- 🧩 **Multi-CVE Support** — Each asset can list multiple CVEs and have them grouped automatically.  
-- 📊 **Supports Raw Data Headers** — Reads real-world dataset headers like `asset.name`, `definition.cve`, and `definition.cvss3.base_score`.  
-- 🪵 **Logging & Error Handling** — Tracks reloads, data integrity, and operational messages.  
-- 🧱 **Modular Design** — Easily extendable for new data sources or AI-driven enrichment.
-- 🔥 **Dynamic Severity Adjustment** — Automatically increases vulnerability severity when risky ports (e.g., SSH, RDP, MySQL) are exposed according to `data/firewall_rules.csv`.
+| Category | Description |
+|-----------|--------------|
+| 🧠 **LLM-Powered Analysis** | Uses an OpenAI GPT model (default: `gpt-4o-mini`) for intelligent reasoning and summaries. |
+| 🔍 **CSV Ingestion** | Reads data from Wiz, Tenable, and IPAM CSV exports. |
+| 🧩 **Modular Tools** | Built with separate `tools/` modules for data correlation and analysis. |
+| 🔥 **Dynamic Severity Adjustment** | Automatically increases severity based on exposed ports in firewall rules. |
+| ⚙️ **Configurable Rules** | Easily modify escalation logic in `config/severity_rules.json`. |
+| 🧾 **Escalation Reason Tracking** | Each vulnerability escalation includes a clear reason (e.g., “Escalated from High to Critical due to open port(s): 22”). |
+| 💬 **Natural Language CLI** | Query vulnerabilities conversationally (“List High and Critical vulnerabilities”). |
+| 💾 **Optional CSV Export** | Only exports data when explicitly requested (e.g., “Export High and Critical vulnerabilities to CSV”). |
+| 🔄 **Auto Data Reload** | Automatically reloads if CSV files are updated. |
+| 🪵 **Logging** | Logs actions, errors, and data changes to `agent.log`. |
 
 ---
 
-## 🏗️ Project Structure
+## 🧱 Project Structure
 
 ```
 vbg_vuln_agent/
-├── app.py                  # Main CLI interface and AI agent
+├── app.py
 ├── tools/
-│   ├── data_tools.py       # Handles data loading, merging, and subnet correlation (multi-CVE aware)
-│   └── analyzer.py         # Provides summarization and prioritization logic
+│   ├── data_tools.py
+│   └── analyzer.py
 ├── data/
-│   ├── vulnerabilities.csv # Sample vulnerability data (supports raw headers and multiple CVEs)
-│   ├── assets.csv          # Sample asset data
-│   └── subnets.csv         # Sample subnet definitions
-├── requirements.txt        # Dependencies
-└── README.md               # Project documentation
+│   ├── vulnerabilities.csv
+│   ├── assets.csv
+│   ├── subnets.csv
+│   └── firewall_rules.csv
+├── config/
+│   └── severity_rules.json
+├── output/
+└── README.md
 ```
 
 ---
 
-## 🧰 Tech Stack
+## ⚙️ Configurable Escalation Rules
 
-| Component | Technology |
-|------------|-------------|
-| **Language** | Python 3.12+ |
-| **Framework** | LangChain (ReAct agent) |
-| **LLM Provider** | OpenAI GPT (`gpt-4o-mini`) |
-| **Data Format** | CSV (Vulnerability, Asset, Subnet) |
-| **Environment** | Virtualenv or venv |
+Modify escalation behavior easily in `config/severity_rules.json`:
+
+```json
+{
+  "risky_ports": [22, 3389, 3306],
+  "escalation_map": {
+    "Low": "Medium",
+    "Medium": "High",
+    "High": "Critical",
+    "Critical": "Critical"
+  },
+  "notes": "You can modify risky ports and escalation levels here."
+}
+```
+
+💡 Example:  
+If port `22` (SSH) or `3389` (RDP) is open and the vulnerability is “High”,  
+it is automatically escalated to “Critical”.
 
 ---
 
-## ⚙️ Installation
+## 💬 Example CLI Usage
 
-### 1️⃣ Clone the repository
+Run the agent:
 ```bash
-git clone https://github.com/audin30/vbg_vulns_agent.git
-cd vbg_vulns_agent
+python3 app.py
 ```
 
-### 2️⃣ Create and activate a virtual environment
-```bash
-python3.12 -m venv venv
-source venv/bin/activate
+### Example Queries
+
+| Query | Behavior |
+|--------|-----------|
+| `List critical vulnerabilities` | Shows Critical vulnerabilities only. |
+| `Show high and medium vulnerabilities` | Filters multiple severities. |
+| `Export high and critical vulnerabilities to CSV` | Exports filtered vulnerabilities to `/output/`. |
+| `List all high vulnerabilities` | Shows high-severity vulnerabilities with escalation reasons. |
+
+---
+
+## 🧾 Escalation Reason Example
+
+| asset_id | cve_id | severity | escalation_reason |
+|-----------|---------|----------|-------------------|
+| web01 | CVE-2024-1111 | Critical | Escalated from High to Critical due to open port(s): 22 |
+| db01 | CVE-2023-7890 | Critical | Escalated from High to Critical due to open port(s): 3389 |
+
+---
+
+## 🧠 Example CLI Output
+
+```
+Vulnerabilities with severities (High, Critical):
+
+╒═══════════╤══════════════╤════════════╤═════════════╤════════════╤══════════════════╤══════════════════════════════════════════════════════════════╕
+│ Asset_id  │ Cve_id       │ Severity   │ Cvss_score  │ Ip         │ Owner            │ Escalation_reason                                               │
+╞═══════════╪══════════════╪════════════╪═════════════╪════════════╪══════════════════╪══════════════════════════════════════════════════════════════╡
+│ web01     │ CVE-2024-1111│ [91mCritical[0m │ 8.9         │ 10.0.0.10  │ IT Operations    │ Escalated from High to Critical due to open port(s): 22        │
+│ db01      │ CVE-2023-7890│ [91mCritical[0m │ 9.8         │ 10.0.1.5   │ Finance          │ Escalated from High to Critical due to open port(s): 3389      │
+╘═══════════╧══════════════╧════════════╧═════════════╧════════════╧══════════════════╧══════════════════════════════════════════════════════════════╛
+
+⚠️ 2 vulnerabilities escalated due to risky open ports.
 ```
 
-### 3️⃣ Install dependencies
+---
+
+## 💾 Optional CSV Export
+
+Export only when explicitly requested:
+
+```bash
+> Export high and critical vulnerabilities to CSV
+```
+
+💾 Output saved to:
+```
+output/vulns_High_Critical_4rows_2025-10-31_185204.csv
+```
+
+✅ Includes all escalation details, making reports fully traceable.
+
+---
+
+## 🧰 Requirements
+
+Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4️⃣ Set your OpenAI API key
-Create a `.env` file in the project root:
+### Example requirements.txt
 ```
-OPENAI_API_KEY=sk-your-openai-key-here
-```
-
----
-
-## ▶️ Running the Agent
-
-```bash
-python app.py
-```
-
-Then ask natural language queries like:
-```
-Summarize my asset distribution.
-List all critical assets and their CVEs.
-Summarize vulnerabilities by severity and subnet.
-```
-
-Example Output:
-```
-🔄 Detected change in data files — reloading...
-✅ Data reloaded successfully.
-🤖 Severity  ip_type   count
-High        Internal   2
-Critical    External   1
+pandas
+tabulate
+langchain
+langchain-openai
+python-dotenv
+openai
 ```
 
 ---
 
-## 🧠 Example Data
+## 🧩 Credits
 
-### `data/vulnerabilities.csv`
-*(Now aligned with real-world exported field names)*
-```csv
-asset.name,definition.cve,definition.cvss3.base_score,severity
-web01,CVE-2024-1111;CVE-2024-2222,8.9,High
-db01,CVE-2023-5421;CVE-2023-7890,9.8,Critical
-```
-
-### `data/assets.csv`
-```csv
-asset_id,ip,owner,criticality
-web01,10.0.0.10,IT Operations,High
-db01,10.0.1.5,Finance,Critical
-```
-
-### `data/subnets.csv`
-```csv
-subnet,type,description
-10.0.0.0/24,Internal,Corporate Web Servers
-172.16.0.0/16,External,Public Systems
-```
-### `data/firewall_rules.csv`
-```csv
-asset_id,port,action,description
-web01,22,allow,SSH open to internet
-web01,443,allow,HTTPS allowed
-web01,3306,deny,MySQL blocked
-db01,3389,allow,RDP exposed
-
-
-> The program automatically maps raw headers to normalized fields (`asset.name` → `asset_id`, `definition.cve` → `cve_id`, etc.) for internal use.
-
----
-
-## 💡 Roadmap
-
-- [ ] Streamlit web dashboard with chat interface  
-- [ ] Integration with Tenable / phpIPAM APIs  
-- [ ] EPSS scoring and exploit intelligence enrichment  
-- [ ] RAG (Retrieval-Augmented Generation) for contextual CVE lookups  
-- [ ] Slack / Teams remediation reporting  
-
----
-
-## 🪵 Logs
-
-The application logs to both the console and `agent.log`, recording:
-- Reload events  
-- Errors and exceptions  
-- Data validation and operational messages
-
----
-
-## 🤝 Credits & Collaboration
-
-This project was designed by audin30. Coding done by OpenAI/ChatGPT
-
-> Together, the goal is to make vulnerability management more intelligent, contextual, and efficient.
-
----
-
-## ⚖️ License
-
-Released under the **MIT License**.  
-See the [LICENSE](LICENSE) file for details.
+Developed by **Juan Janolo**  
+🤖 In collaboration with **ChatGPT and OpenAI**
