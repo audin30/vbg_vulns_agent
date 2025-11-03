@@ -4,3 +4,4 @@ open_ai_key*
 vbg_vuln_agent_updated.zip
 data/*.csv
 output/*.csv
+agent.log
