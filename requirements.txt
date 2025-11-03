@@ -4,3 +4,4 @@ pandas
 tqdm
 faiss-cpu
 python-dotenv
+tabulate

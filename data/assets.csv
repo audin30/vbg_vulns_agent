@@ -1,3 +1,45 @@
 asset_id,ip,owner,criticality
-web01,10.0.0.10,IT Operations,High
-db01,10.0.1.5,Finance,Critical
+EATS_NET_BW-Server-10.106.23.152,10.106.23.152,tanveer.kazi@citrix.com,High
+rishabhdh-SQLNode1,10.110.42.203,rishabh.dhingra@citrix.com,Low
+brunoluisr-w11VDAv2203,10.110.58.242,brunoluis.ribeiro@citrix.com,High
+gstestopsasf,10.146.30.92,jitendra.deshpande@citrix.com,Low
+i-139-3241-VM,10.110.56.151,rajdeep.deb@citrix.com,High
+lab19,10.110.249.246,kai.lu@citrix.com,Low
+mstacits68,10.8.136.198,sean.michelsen@citrix.com,High
+Netscaler-Test,10.110.149.12,enis.axhami@citrix.com,Low
+nivedham-CentOS-Apache2,10.110.32.9,nivedha.m@citrix.com,High
+RL-168-STCTS-1,10.108.209.5,sean.michelsen@citrix.com,Low
+i-512-6243-VM,10.14.79.121,eduardo.ventura@citrix.com,High
+i-1971-27557-VM,10.110.112.142,kusuma.sk@citrix.com,Low
+GAJ-LS9-W2K19,10.61.44.52,suresh.paulraj@citrix.com,High
+CRCVAD-vda9-39,192.168.21.54,nagarajarao.ambekar@cloud.com;shaun.rothermel@cloud.com;vijaykumar.yaralakatti@cloud.com,Low
+License server,10.110.141.40,lavanya.bk@citrix.com,High
+public3849-VIAOW-DDC-1,10.61.152.10,george.chen@citrix.com,Low
+VLAN2614-MPXIU-VDA-55,10.108.225.44,sean.michelsen@citrix.com,High
+i-119-230-VM,10.110.43.132,graeme.dunkley@citrix.com,Low
+i-98-12442-VM,10.110.62.47,shirish.charde@citrix.com,High
+RL-8-CON-1,10.108.209.1,sean.michelsen@citrix.com,Critical
+Win11_RTM_64_EN_24H2_tingqiangs,10.61.151.228,george.chen@citrix.com,High
+E2E_Docker-swarm-manager-node - DO NOT DELETE!!,10.61.44.58,suresh.paulraj@citrix.com,Critical
+"ADC 193.66 (193.72, 193.77) ADMService Sanity  RTM",10.106.193.66,tanveer.kazi@citrix.com,High
+i-1936-20963-VM,10.110.133.5,akiritulsi.bhanupratap@citrix.com,
+Storefront,10.110.146.42,pranjal.bhardwaj@citrix.com,High
+eng-automation-vda-1093,192.168.10.28,NagarajaRao.Ambekar@cloud.com;Vijaykumar.Yaralakatti@cloud.com;Shaun.Rothermel@cloud.com,
+Yajat_CTXA_setup_10.102.3.171,10.102.3.171,jitendra.deshpande@citrix.com,High
+i-1434-21648-VM,10.110.250.29,yeting.han@citrix.com,Critical
+Linuxvda-c102404-97,192.168.10.230,labstage@cloud.com;NagarajaRao.Ambekar@cloud.com;Vijaykumar.Yaralakatti@cloud.com;Shaun.Rothermel@cloud.com,Critical
+ASH1VWSQLLA101-10.14.7.25,10.14.7.25,NagarajaRao.Ambekar@cloud.com;Vijaykumar.Yaralakatti@cloud.com;Shaun.Rothermel@cloud.com,Critical
+RL-113-DC-1,10.108.208.205,sean.michelsen@citrix.com,Critical
+sf001-1LTS-105,192.168.20.137,nagarajarao.ambekar@cloud.com;shaun.rothermel@cloud.com;vijaykumar.yaralakatti@cloud.com,Critical
+i-659-7898-VM,10.110.125.122,saiprashanth.s@citrix.com,Critical
+de-16g-41,192.168.8.219,nagarajarao.ambekar@cloud.com;shaun.rothermel@cloud.com;vijaykumar.yaralakatti@cloud.com,Critical
+VM-006ece68-e8d7-4f9a-bc31-b97bf4240c58,10.110.72.73,jian.ding@citrix.com,
+i-681-6718-VM,10.110.128.42,kr.subhash@citrix.com,
+VLAN2614-MPXIU-VDA-57,10.108.228.156,sean.michelsen@citrix.com,
+VDA02-SS,10.110.149.73,janhendrik.prinz@citrix.com,
+xs-ruchira-l2r34-32u-10.102.187.90,10.102.187.90,jitendra.deshpande@citrix.com,
+mstacits4,10.8.136.180,sean.michelsen@citrix.com,
+163-js-ADC-mastools-LAS,10.102.51.163,jitendra.deshpande@citrix.com,
+L-vda2--9598,192.168.11.127,NagarajaRao.Ambekar@cloud.com;Vijaykumar.Yaralakatti@cloud.com;Shaun.Rothermel@cloud.com,
+Kunal-vpx-159-163,10.221.35.159,venkat.swaminathan@citrix.com;thulasiprasad.vakati@citrix.com,
+lic-server-na1-storage,10.62.1.106,james.piper@citrix.com;james.burniston@citrix.com,

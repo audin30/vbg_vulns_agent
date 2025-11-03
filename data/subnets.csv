@@ -1,3 +1,1208 @@
 subnet,type,description
-10.0.0.0/24,Internal,Corporate Web Servers
-172.16.0.0/16,External,Public-Facing Systems
+10.98.111.0/24,,NA1-GPuser-PARC-Contractor
+10.64.12.0/24,,need to look into this
+10.113.81.0/24,,ENG Breakglass VPN Pool
+10.164.0.0/24,,Shared - SelfService
+10.164.2.0/24,,Shared - Domain Controllers
+10.101.206.0/24,,Spotfire-spt
+10.71.120.0/24,,XS-XRT-LCYLAB02-MGMT-DT-130
+10.108.237.0/24,,System 2
+10.108.216.0/24,,CVAD/Sean Michelsen
+10.71.2.0/24,,XS-INF-MGMT-PDU-PROD-101
+10.122.0.0/24,,Management
+10.71.212.0/24,,XS-XRT-CORE-VM-GENERAL-812
+10.108.224.0/24,,System 2
+10.110.17.0/24,,
+10.93.2.0/24,,SAP Dev Servers
+10.14.1.0/24,,Coral Gables  IPT    Vlan 208
+160.101.128.0/24,,NA1 - External Network
+10.71.8.0/24,,XS-PRODPOOL-VM-DATA-104
+10.106.181.0/24,,gopal.cerukurpurushothaman@cloud.com
+10.108.242.0/24,,System 2
+10.108.220.0/24,,System 2
+10.106.185.0/24,,gopal.cerukurpurushothaman@cloud.com_Vlan315
+10.62.1.0/24,,XS-XRT-CORE-VM-STATIC-802
+10.106.17.0/24,,gopal.cerukurpurushothaman@cloud.com R73  42U
+10.61.6.0/24,,IT Infra Network
+10.102.61.0/24,,gopal.cerukurpurushothaman@cloud.com
+10.109.131.0/24,,Citrix_Director_Analystics
+10.102.201.0/24,,nilamadhava.chaudhury@cloud.com
+10.102.172.0/24,,vishal.soni@cloud.com_Vlan306
+10.71.48.0/24,,XS-BUILD-EDDIES-330
+10.109.143.0/24,,BLR3 EDaaS BlrVM  16
+10.71.1.0/24,,XS-INF-MGMT-SWITCH-100
+10.108.236.0/24,,CVAD iSCI
+10.109.135.0/24,,blr3_lcm_csm_cvad4
+10.14.18.0/24,,L3    Labstage
+10.101.209.0/24,,TIBCO-str
+10.106.151.0/24,,Mohammad Daneesh_Vlan335
+10.102.154.0/24,,nasir.zahiruddin@cloud.com
+10.101.0.0/24,,switch mgmt
+10.108.239.0/24,,CVAD Chris Stewart
+10.61.0.0/24,,IT Infra Network
+10.106.18.0/24,,karthik.somayaji@cloud.com
+10.71.107.0/24,,KOJI
+160.101.130.0/24,,NA1 Hub Public (NetScaler)
+10.14.2.0/24,,Coral Gables Users    vlan 220
+10.108.244.0/24,,System 2
+10.102.28.0/24,,ashoke.saha@cloud.com
+10.109.139.0/24,,BLR3 EDaaS BlrVM  12
+10.101.200.0/24,,TIBCO-osp
+10.106.175.0/24,,ankit.singh@cloud.com
+10.106.197.0/24,,Srinivasareddy.kasu@cloud.com_Vlan307
+10.64.2.0/24,,OOB MGMT Rubrick / Other
+10.106.148.0/24,,vishal.soni@cloud.com
+10.93.0.0/24,,SAP Infra Networks
+10.106.98.0/24,,deepakkumar.jha@cloud.com
+10.101.183.0/24,,TIBCO-dsy
+10.60.129.0/24,,everest host
+10.106.150.0/24,,ravigowda.gowda@cloud.com_Vlan345
+10.106.14.0/24,,BLR5_Lab_106
+10.106.183.0/24,,raghu.goyal@cloud.com
+10.122.4.0/24,,Trusted Devices
+10.64.0.0/24,,OOB MGMT Network
+10.106.164.0/24,,vishal.soni@cloud.com
+10.222.12.0/24,,SJC7    GLIS Transit Links
+10.106.103.0/24,,praveen pagadala
+10.102.12.0/24,,Praveen Kumar Singh
+10.102.51.0/24,,pradeep.ar@cloud.com_Vlan308
+10.105.50.0/24,,Raghavendra Singh_2D LR 15_21U
+10.106.156.0/24,,gopal.cerukurpurushothaman@cloud.com_Vlan342
+10.106.189.0/24,,karthik.somayaji@cloud.com
+10.102.53.0/24,,muthukumar.shunmugiah@cloud.com_Vlan332
+10.106.186.0/24,,gopal.cerukurpurushothaman@cloud.com
+10.105.156.0/24,,Naresh Majji_2D  LR  10  22U
+10.106.173.0/24,,Srinivasareddy.kasu@cloud.com
+10.14.4.0/24,,L3    Labstage
+10.101.191.0/24,,TIBCO-ipr
+10.64.193.0/24,,Nutanix Compute
+10.106.100.0/24,,gopal.cerukurpurushothaman@cloud.com
+10.102.1.0/24,,vassilis.tsogkas@cloud.com
+10.106.44.0/24,,premkumar.sj@cloud.com    BLR5R93  16U
+10.106.12.0/24,,Jyotiranjan Nayak_R118  27U
+10.110.4.0/24,,
+10.102.33.0/24,,muthukumar.shunmugiah@cloud.com
+10.106.177.0/24,,deepakkumar.jha@cloud.com
+10.106.188.0/24,,karthik.somayaji@cloud.com
+10.101.192.0/24,,IT-iti
+160.101.131.0/24,,NA1 Hub Public
+10.106.170.0/24,,ankit.singh@cloud.com
+10.8.190.0/24,,
+10.93.1.0/24,,SAP Prd Servers
+10.60.96.0/24,,MIA2 EDaaS    On Prem_HyperV Management
+10.102.239.0/24,,deepakkumar.jha@cloud.com
+10.106.137.0/24,,Aparna.Avuthu@cloud.com _Vlan312
+10.106.102.0/24,,muthukumar.shunmugiah@cloud.com_Vlan308
+10.102.199.0/24,,Mohammad Daneesh_Sanity Testbed
+10.106.11.0/24,,gopal.cerukurpurushothaman@cloud.com
+10.102.34.0/24,,goutham.shetlurmohan@cloud.com
+10.106.80.0/24,,vishal.soni@cloud.com_Vlan335
+10.108.235.0/24,,CVAD Mgmt
+10.102.181.0/24,,Mohammad Daneesh
+10.102.76.0/24,,Shishir Kumar
+10.106.155.0/24,,pradeep.ar@cloud.com
+10.106.63.0/24,,Mohammad Daneesh GLIS BLR
+10.217.128.0/24,,SJC1  Engineering  I
+10.14.12.0/24,,L3    Labstage
+10.105.116.0/24,,pradeep.kumarwarrier@cloud.com_2C LR 12_30U
+10.105.48.0/24,,chaitanyavarma.penmetsa@cloud.com_2C  LR  12  26U
+10.106.167.0/24,,Praveen Pagadala
+10.14.21.0/24,,L3    Labstage
+10.102.56.0/24,,Mohammad Daneesh_Vlan334
+10.102.132.0/24,,Mohammad Daneesh
+10.102.197.0/24,,Srinivasareddy.kasu@cloud.com
+10.102.95.0/24,,ruchira.chakraborty@cloud.com_Vlan315
+10.106.16.0/24,,deepakkumar.jha@cloud.com_R119  27U
+10.101.190.0/24,,SBO-glo
+10.101.179.0/24,,TIBCO-bpm
+10.14.190.0/24,,L3    Labstage
+10.106.166.0/24,,ankit.singh@cloud.com
+10.106.171.0/24,,gopal.cerukurpurushothaman@cloud.com
+10.106.113.0/24,,SenthilKumar.Periasamy@cloud.com
+10.109.1.0/24,,CWA_HCI_KIt
+10.81.144.0/24,,XS-HCI-INFRA-2417
+10.102.208.0/24,,vineetkumar.chawla@cloud.com
+10.105.187.0/24,,mallikarjuna.reddym@cloud.com_2D LR 17_38U
+10.106.30.0/24,,karthik.somayaji@cloud.com R28  29U
+10.106.139.0/24,,Praveen Pagadala
+10.109.133.0/24,,blr3_lcm_csm_cvad2
+10.14.182.0/24,,L3    Labstage
+10.60.0.0/24,,
+10.106.15.0/24,,Yajat Sharma
+10.106.160.0/24,,Aparna.Avuthu@cloud.com _Vlan312
+10.106.191.0/24,,karthik.somayaji@cloud.com
+10.14.7.0/24,,Coral Gables    Managment VLAN 176
+10.106.13.0/24,,BLR5_Lab_106
+10.106.190.0/24,,karthik.somayaji@cloud.com
+10.106.59.0/24,,Mohammad Daneesh_Vlan342
+10.101.198.0/24,,TIBCO-mni
+10.232.2.0/24,,Domain Controllers
+10.14.200.0/24,,L3    Labstage
+10.102.37.0/24,,muthukumar.shunmugiah@cloud.com
+10.106.20.0/24,,vishal.soni@cloud.com    R89  9U
+10.106.26.0/24,,Nasir.Zahiruddin@cloud.com_Vlan319
+10.110.180.0/24,,
+10.81.147.0/24,,XS-HCI-MGMT-HYP-2421
+185.25.67.0/24,,EU2 HUB External
+10.108.243.0/24,,System 2
+10.102.32.0/24,,BLR5_10.102
+10.102.193.0/24,,Manjunath M
+10.102.78.0/24,,Praveen Raja Dhanabalan_Vlan331
+10.106.182.0/24,,gopal.cerukurpurushothaman@cloud.com_Vlan315
+10.109.141.0/24,,BLR3 EDaaS BlrVM  14
+10.146.17.0/24,,BLR3  GLIS PHYSICAL SEC
+10.101.187.0/24,,TIBCO-way
+160.101.135.0/24,,NA2 Hub Public-OLD
+10.14.5.0/24,,L3    Labstage
+10.60.131.0/24,,everest storage ext
+10.105.194.0/24,,Srinivasarao Nelluri _2D LR 14_42U
+10.105.62.0/24,,Muralitharan Rajagopalan
+10.106.23.0/24,,Mohammad Daneesh
+10.106.136.0/24,,gopal.cerukurpurushothaman@cloud.com
+10.106.187.0/24,,karthik.somayaji@cloud.com_Vlan305
+10.109.128.0/24,,BLR3 RTST_Infra
+10.64.192.0/24,,Nutanix Prod
+10.240.2.0/24,,Shared - Domain Services
+10.102.192.0/24,,Srinivasareddy.kasu@cloud.com
+10.102.98.0/24,,tanveer.kazi@cloud.com
+10.105.57.0/24,,srinivas.narayan@cloud.com_2D LR 04_42U
+10.106.154.0/24,,ravigowda.gowda@cloud.com_Vlan345
+10.106.57.0/24,,Mohammad Daneesh_Vlan342
+10.106.67.0/24,,Mohammad Daneesh_Vlan317
+10.109.134.0/24,,blr3_lcm_csm_cvad3
+10.109.196.0/24,,cwa  cap  windows_Node5
+160.101.129.0/24,,NA1 - Public DMZ Network
+10.102.2.0/24,,BLR5_MGMT NW
+10.102.148.0/24,,deepakkumar.jha@cloud.com_Vlan328
+10.102.82.0/24,,deepakkumar.jha@cloud.com_Vlan342
+10.102.87.0/24,,deepakkumar.jha@cloud.com
+10.106.157.0/24,,ravigowda.gowda@cloud.com_Vlan345
+10.106.184.0/24,,raghu.goyal@cloud.com
+10.106.64.0/24,,Mohammad Daneesh_Vlan317
+10.109.147.0/24,,BLR3 EDaaS    On Prem_HyperV Management
+10.71.237.0/24,,XS-XRT-LCYCC-NPRI-823
+10.8.188.0/24,,
+10.101.176.0/24,,TIBCO-asg
+10.102.40.0/24,,gopal.cerukurpurushothaman@cloud.com deepakkumar.jha@cloud.com
+10.102.217.0/24,,deepakkumar.jha@cloud.com
+10.105.203.0/24,,Srinivasarao Nelluri_2D LR 06_41U
+10.105.51.0/24,,Naresh Majji
+10.106.174.0/24,,sujaykumar.r@cloud.com
+10.106.117.0/24,,SenthilKumar.Periasamy@cloud.com _Vlan346
+10.110.190.0/24,,
+10.217.122.0/24,,Lab 212 IT Subnet
+10.101.207.0/24,,TIBCO-spw
+10.102.10.0/24,,gopal.cerukurpurushothaman@cloud.com
+10.102.168.0/24,,mahesh.bhaskarpandit@cloud.com_Vlan301
+10.105.77.0/24,,Avinash Khatri
+10.106.149.0/24,,SenthilKumar.Periasamy@cloud.com_Vlan320
+10.110.7.0/24,,
+162.221.157.0/24,,NA2 Hub Public (NetScaler)
+10.62.12.0/24,,XS-XRT-MIA06-NSEC-814
+10.102.38.0/24,,pradeep.ar@cloud.com_Vlan308
+10.102.198.0/24,,Manjunath M
+10.106.210.0/24,,sumanth.lingappa@cloud.com
+10.106.60.0/24,,Mohammad Daneesh_Vlan342
+10.106.81.0/24,,vishal.soni@cloud.com_Vlan313
+10.109.144.0/24,,BLR3  EDaaS    On Prem_Infra
+10.109.145.0/24,,BLR3 EDaaS    On Prem_Mgmt
+10.220.183.0/24,,Akhila Srinivasamurthy
+10.14.16.0/24,,Network moved to MIA2
+10.105.245.0/24,,Venkat Akina
+10.105.87.0/24,,EI Pod Bangalore
+10.106.19.0/24,,BLR5_Lab_106
+10.106.168.0/24,,karthik.somayaji@cloud.com
+10.101.204.0/24,,TIBCO-spe
+10.14.184.0/24,,L3    Labstage
+10.108.240.0/24,,CVAD AD DHCP Infrax
+10.102.49.0/24,,chandankumar.pr@cloud.com
+10.102.226.0/24,,Mohammad Daneesh N Kumbari_Vlan313
+10.106.179.0/24,,ankit.singh@cloud.com_Vlan956
+10.101.195.0/24,,TIBCO-mas
+10.101.199.0/24,,TIBCO-msg
+10.14.185.0/24,,L3    Labstage
+10.102.31.0/24,,raghu.goyal@cloud.com
+10.102.48.0/24,,BLR5_10.102
+10.102.182.0/24,,Mohammad Daneesh_Vlan303
+10.102.230.0/24,,Mohammad Daneesh_Vlan326
+10.102.237.0/24,,Mohammad Daneesh
+10.105.147.0/24,,Srinivasarao Nelluri _2D LR 15_41U
+10.106.194.0/24,,premkumar.sj@cloud.com_Vlan333
+10.109.138.0/24,,BLR3 EDaaS BlrVM  11
+10.71.239.0/24,,XS-XRT-LCYCC-IPRI-825
+10.60.107.0/24,,MCS_Nutanix_Guest1
+10.102.6.0/24,,gopal.cerukurpurushothaman@cloud.com_Vlan312
+10.102.137.0/24,,ruchira.chakraborty@cloud.com
+10.102.187.0/24,,ruchira.chakraborty@cloud.com
+10.105.59.0/24,,mallikarjuna.reddym@cloud.com_2D LR 04_21U
+10.106.24.0/24,,deepakkumar.jha@cloud.com_Vlan329
+10.106.27.0/24,,Praveen Pagadal
+10.106.85.0/24,,Mohammad Daneesh_Vlan313
+10.110.185.0/24,,
+10.70.0.0/24,,Hub Infra
+10.71.238.0/24,,XS-XRT-LCYCC-NSEC-824
+10.101.184.0/24,,TIBCO-dv
+10.101.194.0/24,,TIBCO-kab
+10.101.197.0/24,,TIBCO-mft
+10.64.203.0/24,,IBI - Production
+160.101.127.0/24,,AP1 Hub Public
+10.240.0.0/24,,Shared - Self Service
+10.14.6.0/24,,L3    Labstage
+10.102.180.0/24,,Mohammad Daneesh
+10.102.93.0/24,,Praveen V_WSS Team _Vlan342
+10.106.43.0/24,,gopal.cerukurpurushothaman@cloud.com
+10.106.88.0/24,,vishal.soni@cloud.com
+10.109.198.0/24,,cwa_cap  xenmobile_Node8
+10.110.5.0/24,,
+10.221.35.0/24,,[Lab363]    SSL DEV  ritesh.patani@cloud.com at Rack D10 (363 VLAN 316)
+10.101.180.0/24,,TIBCO-cic
+10.64.194.0/24,,Nutanix Storage
+100.100.100.0/24,,EVP-LAN-Primary
+100.100.200.0/24,,EVP-LAN-Secondary
+10.248.2.0/24,,Domain Controllers
+10.230.2.0/24,,Shared - Domain Controller
+10.8.188.0/24,,
+10.63.193.0/24,,for carlos for  27s
+10.105.112.0/24,,Venkat Akina
+10.105.199.0/24,,"Raghavendra Singh_2C LR 13_21,23,25U"
+10.106.162.0/24,,ankit.singh@cloud.com_Vlan304
+10.106.68.0/24,,Mohammad Daneesh_Vlan317
+10.106.83.0/24,,Mohammad Daneesh_Vlan313
+10.222.102.0/24,,AAAGW    Secure Workspace Access (SWA)
+103.14.254.0/24,,BLR3 Hub Public (NetScaler)
+10.101.205.0/24,,TIBCO-spi
+10.178.2.0/24,,Shared - Domain Services
+10.113.1.0/24,,Hub DMZ Private
+10.102.165.0/24,,Mohammad Daneesh
+10.102.227.0/24,,Mohammad Daneesh_Vlan313
+10.106.180.0/24,,raghu.goyal@cloud.com_Vlan345
+10.106.198.0/24,,deepakkumar.jha@cloud.com
+10.109.140.0/24,,BLR3 EDaaS BlrVM  13
+10.101.193.0/24,,Jaspersoft-jas
+10.101.201.0/24,,TIBCO-psg
+10.14.242.0/24,,L3    Labstage
+10.14.253.0/24,,Network moved to MIA2
+10.102.54.0/24,,Shaik.Areefa@cloud.com
+10.102.169.0/24,,muthukumar.shunmugiah@cloud.com_Vlan316
+10.102.218.0/24,,deepakkumar.jha@cloud.com
+10.106.176.0/24,,Dinesh Mehra
+10.106.61.0/24,,Mohammad Daneesh_Vlan342
+10.106.65.0/24,,Mohammad Daneesh_Vlan317
+10.106.86.0/24,,SenthilKumar.Periasamy@cloud.com_Vlan317
+10.101.208.0/24,,Spotfire-sta
+10.129.63.0/24,,subnet_ct_prd_ew_snet_01
+10.129.63.0/24,,subnet_ct_prd_ew_snet_01
+10.14.11.0/24,,L3    Labstage
+10.14.183.0/24,,L3    Labstage
+10.108.238.0/24,,CVAD Karan
+10.102.147.0/24,,deepakkumar.jha@cloud.com
+10.102.174.0/24,,vishal.soni@cloud.com_Vlan308
+10.105.170.0/24,,Naresh Majji
+10.106.169.0/24,,gopal.cerukurpurushothaman@cloud.com
+10.106.199.0/24,,SenthilKumar.Periasamy@cloud.com
+10.106.116.0/24,,SenthilKumar.Periasamy@cloud.com_Vlan326
+10.110.183.0/24,,
+160.101.137.0/24,,EU1 DMZ Subnet
+10.70.62.0/24,,XS-XRT-LCYLAB02-IPRI-1351
+10.70.63.0/24,,XS-XRT-LCYLAB02-ISEC-1352
+10.101.177.0/24,,TIBCO-be
+10.101.181.0/24,,TIBCO-cpf
+10.101.189.0/24,,TIBCO-fst
+10.101.196.0/24,,TIBCO-mdm
+10.106.74.0/24,,deepakkumar.jha@cloud.com_Vlan325
+10.106.115.0/24,,SenthilKumar.Periasamy@cloud.com_Vlan326
+10.71.122.0/24,,XS-UCS-MGMT-124
+10.217.2.0/24,,[Lab363]    SSL Dev    ritesh.patani@cloud.com at rack D9 (363 VLAN 303)
+10.222.100.0/24,,SJC7    Secure Hosting External N W
+10.101.188.0/24,,TIBCO-fos
+10.101.202.0/24,,SBO-re
+10.93.6.0/24,,SAP-DMZ
+10.14.243.0/24,,L3    Labstage
+10.14.254.0/24,,Network moved to MIA2
+10.102.133.0/24,,SenthilKumar.Periasamy@cloud.com
+10.105.184.0/24,,Nagaraju Pallapothu
+10.106.200.0/24,,TECH_FAIR
+10.106.42.0/24,,mahesh.bhaskarpandit@cloud.com_Vlan342
+10.106.69.0/24,,muthukumar.shunmugiah@cloud.com_Vlan317
+10.106.112.0/24,,ruchira.chakraborty@cloud.com_Vlan328
+10.106.118.0/24,,tanveer.kazi@cloud.com
+10.109.194.0/24,,cwa_cap  android_Node3
+10.71.0.0/24,,LCY2    IT Services    VLAN 176 and VLAN192
+10.60.109.0/24,,MCS_Nutanix_Guest3
+10.101.210.0/24,,TIBCO-tci
+10.64.3.0/24,,OOB MGMT PDU
+10.210.16.0/24,,BizApp_core_services
+160.101.139.0/24,,EU1 GTT Subnet
+10.93.5.0/24,,NFS2
+10.14.20.0/24,,Network moved to MIA2
+10.14.244.0/24,,Network moved to MIA2
+10.60.130.0/24,,everest management
+10.62.145.0/24,,Andy Bullock
+10.102.9.0/24,,vishal.soni@cloud.com_Vlan324
+10.102.177.0/24,,vishal.soni@cloud.com
+10.106.172.0/24,,muthukumar.shunmugiah@cloud.com_Vlan327
+10.106.56.0/24,,Mohammad Daneesh_Vlan303
+10.106.101.0/24,,gopal.cerukurpurushothaman@cloud.com
+10.109.130.0/24,,LCM Mgmt Network
+10.109.142.0/24,,BLR3 EDaaS BlrVM  15
+10.110.18.0/24,,
+10.110.6.0/24,,
+10.110.181.0/24,,
+10.110.182.0/24,,
+10.71.106.0/24,,VLAN 1510
+10.217.26.0/24,,SJC1  Engineering  I
+10.217.112.0/24,,Decommissioned | Available Now
+10.222.93.0/24,,SDWAN  GEN   StandAlone_VMs
+160.101.138.0/24,,EU1 Colt Subnet
+10.60.108.0/24,,MCS_Nutanix_Guest2
+185.25.64.0/24,,EU2 TATA Subnet
+185.25.65.0/24,,EU2 GTT Subnet
+10.101.186.0/24,,TIBCO-ese
+10.64.1.0/24,,OOB MGMT Nutanix
+10.248.0.0/24,,Self Service
+10.8.190.0/24,,
+10.14.180.0/24,,L3    Labstage
+10.14.181.0/24,,L3    Labstage
+10.14.191.0/24,,L3    Labstage
+10.14.241.0/24,,L3    Labstage
+10.14.248.0/24,,Network moved to MIA2
+10.60.105.0/24,,MIA2 NAT HDX  Direct
+10.60.128.0/24,,everest network devices
+10.63.195.0/24,,Citrix BRK VM Network |  EngZone  Engineering Lab
+10.108.184.0/24,,System 2
+10.108.234.0/24,,System 2
+10.102.29.0/24,,Aravind Anand _Vlan324
+10.102.30.0/24,,nasir.zahiruddin@cloud.com _Vlan310
+10.102.150.0/24,,BLR5_10.102
+10.102.151.0/24,,deepakkumar.jha@cloud.com_Vlan318
+10.102.166.0/24,,pradeep.ar@cloud.com_Team
+10.102.170.0/24,,Bhaskar_Rao
+10.102.204.0/24,,deepakkumar.jha@cloud.com
+10.105.186.0/24,,Nagaraju Pallapothu
+10.105.105.0/24,,Venkat Akkina_2C LR 15 34U
+10.106.195.0/24,,Ravi Palankar
+10.106.91.0/24,,Mohammad Daneesh_Vlan313
+10.109.132.0/24,,blr3_lcm_csm_cvad1
+10.110.11.0/24,,
+10.110.16.0/24,,
+10.110.184.0/24,,
+10.71.30.0/24,,CITRIX-HDX-MGMT-1031
+10.147.124.0/24,,Csg-VDI-Test VDI
+10.88.20.0/24,,NS SYSTEST/STRESS
+10.101.178.0/24,,IT-bi
+10.101.182.0/24,,Spotfire-dsc
+10.101.185.0/24,,TIBCO-ebx
+10.101.203.0/24,,TIBCO-scr
+10.64.209.0/24,,ERP - FinancialApps
+10.64.210.0/24,,ERP - Integration
+10.64.212.0/24,,ERP - BPC
+10.64.208.0/24,,ERP - GoToMarketing
+10.64.211.0/24,,ERP - TibcoAcctPIMS
+100.100.101.0/24,,na1netcore01-na2netcore01
+100.100.102.0/24,,na1netcore02-na2netcore02
+100.100.103.0/24,,na2netcore01-na3netcore01
+100.100.104.0/24,,na2netcore02-na3netcore02
+100.100.105.0/24,,na1netcore01-eu1netcore01
+100.100.106.0/24,,na1netcore02-eu1netcore02
+100.100.201.0/24,,na1netcore01-AWS
+100.100.203.0/24,,na2netcore01-AWS
+100.100.205.0/24,,eu1netcore01-AWS
+10.147.177.0/24,,vnet_lab_pipeline_sbo_dev_ci
+10.115.63.0/24,,DMZ-FE-EXT
+10.102.11.0/24,,SenthilKumar Periasamy_Shutdown_Vlan318
+10.102.27.0/24,,deepakkumar.jha@cloud.com
+10.102.60.0/24,,gopal.cerukurpurushothaman@cloud.com_Vlan304
+10.102.173.0/24,,vishal.soni@cloud.com_Vlan307
+10.102.175.0/24,,goutham.shetlurmohan@cloud.com_Vlan309
+10.102.202.0/24,,Muthukumar Shunmugiah
+10.102.74.0/24,,rajnesh.raturi_Vlan303
+10.102.77.0/24,,Sachin Shelar
+10.105.117.0/24,,Karthick Srivatsan _2C LR 10_15U
+10.105.30.0/24,,LCM    BLR Team_2B LR 13_21U
+10.105.191.0/24,,Suman Babu Gogineni
+10.105.192.0/24,,Suman Babu Gogineni
+10.105.58.0/24,,Nagaraju Pallapothu_2D_LR04_25U
+10.105.109.0/24,,Karthick Srivatsan_2C LR 11_8U
+10.106.134.0/24,,tanveer.kazi@cloud.com_Vlan313
+10.106.138.0/24,,Sajeev S_Vlan340
+10.106.140.0/24,,Birajendu Sahu
+10.106.72.0/24,,Not In Use
+10.106.97.0/24,,Vaibhav Kulkarni_Vlan329
+10.146.32.0/24,,Build team_Storage vlan
+10.81.128.0/24,,XS-XENDAAS-USERS-2401
+10.81.129.0/24,,XS-PRODPOOL-VM-GENERAL-2402
+10.81.130.0/24,,XS-HCI-VM-SPARE-3-2403
+10.81.131.0/24,,XS-HCI-VM-SPARE-4-2404
+10.81.132.0/24,,XS-HCI-VM-SPARE-5-2405
+10.81.133.0/24,,XS-HCI-VM-SPARE-6-2406
+10.81.134.0/24,,XS-HCI-VM-SPARE-7-2407
+10.81.135.0/24,,XS-HCI-VM-SPARE-8-2408
+10.81.136.0/24,,XS-HCI-VM-SPARE-9-2409
+10.81.137.0/24,,XS-UCS-USERS-K8S-2410
+10.81.138.0/24,,XS-HCI-VM-SPARE-11-2411
+10.81.139.0/24,,XS-HCI-VM-SPARE-12-2412
+10.81.140.0/24,,XS-HCI-VM-SPARE-13-2413
+10.81.141.0/24,,XS-HCI-VM-SPARE-14-2414
+10.81.142.0/24,,XS-HCI-VM-SPARE-15-2415
+10.81.143.0/24,,XS-PMDEMOLAB-VM-2416
+10.81.145.0/24,,XS-HCI-MGMT-2418
+10.217.136.0/24,,Lab363 KVM  TB Rack  E06  (new  24 subnet)
+10.221.61.0/24,,SJC1  Engineering  II
+10.222.32.0/24,,L3 Handoffs
+185.25.66.0/24,,EU2 DMZ Subnet
+103.14.255.0/24,,BLR3 Hub Public
+10.101.2.0/24,,LAB moved from PA to NA3 June 2022
+10.129.92.0/24,,subnet_iti_prd_ew_2
+10.178.0.0/24,,Shared - SelfService
+10.230.0.0/24,,Shared - Self Service
+10.232.0.0/24,,Self Service
+10.102.149.0/24,,deepakkumar.jha@cloud.com BLR5_10.102
+10.102.160.0/24,,chandni.jha citrix.com
+10.102.185.0/24,,deepakkumar.jha@cloud.com_Vlan320
+10.102.188.0/24,,Balaji Phaneedra_WSS Team
+10.102.194.0/24,,vassilis.tsogkas@cloud.com
+10.102.207.0/24,,BLR5_10.102
+10.102.224.0/24,,BLR5_10.102
+10.102.233.0/24,,goutham.shetlurmohan@cloud.com
+10.102.69.0/24,,Praveen C_WSS Team
+10.102.96.0/24,,tanveer.kazi@cloud.com_Vlan960
+10.105.198.0/24,,Srirama K _2B LR 02_39U
+10.105.66.0/24,,Suman Babu Gogineni
+10.105.82.0/24,,Suman Babu Gogineni
+10.106.142.0/24,,goutham.shetlurmohan@cloud.com
+10.106.196.0/24,,Mohammad Daneesh_Vlan326
+10.106.38.0/24,,Deepti Nirwani
+10.106.40.0/24,,Vishnu Prateek Ponaka
+10.106.49.0/24,,Mohan Sekar (Product Security)
+10.106.58.0/24,,goutham.shetlurmohan@cloud.com
+10.106.62.0/24,,Mohammad Daneesh_Vlan303
+10.106.66.0/24,,Mohammad Daneesh_Vlan317
+10.106.84.0/24,,Mohammad Daneesh_Vlan313
+10.106.90.0/24,,Mohammad Daneesh_Vlan313
+10.106.95.0/24,,SenthilKumar.Periasamy@cloud.com_Vlan313
+10.106.99.0/24,,Praveen Kumar C_Vlan345
+10.109.129.0/24,,BLR3 RTST_VM_Subnet
+10.109.136.0/24,,blr3_lcm_csm_cvad5
+10.109.137.0/24,,BLR3 EDaaS BlrVM  10
+10.146.22.0/24,,BLR3  IR_PROD
+10.146.25.0/24,,7th floor User subnet   DHCP on the SW
+10.146.28.0/24,,BLR3 PM Team IPMI
+10.146.34.0/24,,globalization_team_blr3
+10.71.31.0/24,,CITRIX-HDX-STRG-1032
+10.61.3.0/24,,IT-INF-MGMT-SER-KVM-103
+10.122.2.0/24,,Security
+10.122.8.0/24,,ENG-Desktops-851-4FL
+10.122.9.0/24,,Desktops-851-1FL
+10.122.10.0/24,,Desktops-851-2FL
+10.122.11.0/24,,Desktops-851-3FL
+10.122.12.0/24,,Desktops-851-4FL
+10.122.13.0/24,,Desktops-851-5FL
+10.122.14.0/24,,Desktops-851-6FL
+10.122.15.0/24,,ENG-Desktops-851-5FL
+10.122.58.0/24,,Internet Devices
+10.122.60.0/24,,Conference Rooms
+10.122.61.0/24,,IoT devices
+10.122.59.0/24,,TIBCO-Guest
+10.120.226.0/24,,Desktops
+10.120.227.0/24,,Desktops
+10.122.226.0/24,,CSG-MIA3-Desktops-1
+10.122.227.0/24,,CSG-MIA3-Desktops-2
+10.101.5.0/24,,TIBCO-Mainframe
+10.64.195.0/24,,Rubrik Backup
+10.64.4.0/24,,Layer 3 connections
+10.64.200.0/24,,VMware Prod
+10.64.213.0/24,,ERP - DBA
+10.64.202.0/24,,Nutanix POC nxhost
+10.64.214.0/24,,ERP - Analytics
+100.100.107.0/24,,Reserved for AP1
+100.100.108.0/24,,Reserved for AP1
+100.100.202.0/24,,na1netcore02-AWS
+100.100.204.0/24,,na2netcore02-AWS
+100.100.206.0/24,,eu1netcore02-AWS
+100.100.207.0/24,,Reserved for AP1
+100.100.208.0/24,,Reserved for AP1
+10.122.194.0/24,,Desktops (Reserved)
+10.122.195.0/24,,Desktops (Reserved)
+10.192.15.0/24,,Citrix-Corp-Printers-BOS1
+10.192.14.0/24,,Citrix-Phy-Security-BOS1
+10.192.3.0/24,,Citrix-Loopbackt-BOS1
+10.123.225.0/24,,Trusted Devices
+10.123.235.0/24,,Visitor WiFi
+10.164.196.0/24,,vnet_lab_ltsrnkg1_lnu_prd_ue
+10.164.197.0/24,,vnet_lab_ltsrcwaus_lcu_prd_ue
+10.164.198.0/24,,vnet_lab_ltsrftl1_lfu_prd_ue
+10.164.199.0/24,,vnet_lab_ltsrblrautoin2_lbu_prd_ue
+10.164.200.0/24,,vnet_lab_cvadqualityus2_cqu_prd_ue
+10.164.201.0/24,,vnet_lab_casdirtest_cas_prd_ue
+10.164.202.0/24,,vnet_lab_wemupm-u_weu_prd_ue
+10.164.203.0/24,,vnet_lab_broker_brk_prd_ue
+10.164.212.0/24,,vnet_lab_icagraphics_gfx_prd_ue
+10.164.213.0/24,,vnet_lab_hostcore_hco_prd_ue
+10.164.214.0/24,,vnet_lab_clicorewin_ccw_prd_ue
+10.123.205.0/24,,citrix-guest
+10.123.197.0/24,,Citrix-Voice
+10.123.194.0/24,,Desktops 7th floor
+10.123.195.0/24,,Desktops 8th floor
+10.123.196.0/24,,Cloud_SG-BYOD
+10.123.198.0/24,,Citrix-Corp
+10.123.200.0/24,,Cloud_SG-Managed
+10.123.204.0/24,,TIBCO-Guest
+10.240.58.0/24,,IT Hosting Prod K8 Service
+10.240.62.0/24,,IT Hosting Dev K8 Service
+10.230.62.0/24,,SBO - SES K8 Service
+10.210.48.0/24,,Tanium
+10.240.64.0/24,,IT Hosting Priv Service Conn
+10.229.4.0/24,,pod
+10.229.5.0/24,,service
+10.93.4.0/24,,Management2
+10.231.34.0/24,,EBX K8 Service
+10.235.4.0/24,,SPT Proxy Spotfire Dev
+10.147.175.0/24,,vnet_lab_citrixdevtest_mcs_prd_ci
+10.235.5.0/24,,subnet-spt-spt-dev-as-k8-pod
+10.229.8.0/24,,Spotfire - SPT Dev - Proxy
+10.250.28.0/24,,pod
+10.250.29.0/24,,service
+10.232.108.0/24,,pods
+10.232.109.0/24,,service
+10.250.31.0/24,,JAS GKE - Service
+10.250.30.0/24,,JAS Proxy
+10.203.0.0/24,,Shared Services
+10.203.1.0/24,,IT Network_2
+10.203.2.0/24,,Domain Services
+10.203.3.0/24,,IT Network_4
+10.164.96.0/24,,Biz Dev - APIM
+10.250.47.0/24,,STR - Spotfire - k8 - Service
+10.223.255.0/24,,Oracle OCI landing zone hosted by wipro
+10.164.97.0/24,,AEM APP dev isolated VNET
+10.164.98.0/24,,AEM APP qa isolated VNET
+10.164.99.0/24,,AEM APP stage isolated VNET
+10.164.228.0/24,,AEM APP Prd Isolated VNET
+10.129.124.0/24,,AEM Prd App Isolated network
+10.164.229.0/24,,sbo-prod-mashery-divestiture-scops455/vnet_mashery_prd_ue
+10.8.50.0/24,,Steven Padron
+10.8.59.0/24,,Reetika Agarwal
+10.8.191.0/24,,
+10.240.24.0/24,,Shared - Self Service - K8 Service network
+10.240.3.0/24,,subnet-proxy-iti-prd-shared-ue
+10.112.0.0/24,,
+10.60.102.0/24,,Openstack PoC environment
+10.60.103.0/24,,MIA2 HC TestVLAN
+10.60.12.0/24,,L3    Bur   Mar Enviroment
+10.60.98.0/24,,MIA2_OpenStack_POC_cluster  mgmt
+10.60.99.0/24,,MIA2_OpenStack_POC_cluster  compute
+10.62.133.0/24,,XenRT  OpenStack  1  818
+10.62.134.0/24,,XenRT  OpenStack  2  819
+10.62.135.0/24,,MIAAW01  VR01  822
+10.62.144.0/24,,MIA2  CLM  2  824
+10.63.0.0/24,,L3    MIA2    XenRT (MIA2ONELAB02)
+10.63.1.0/24,,L3    MIA2    XenRT (MIA2ONELAB02)
+10.63.2.0/24,,L3    MIA2    XenRT (MIA2ONELAB02)
+10.63.3.0/24,,L3    MIA2    XenRT (MIA2ONELAB02)
+10.63.192.0/24,,MIA2 Cisco ACI Kit
+10.63.194.0/24,,MIA2 CoreTools VMs
+10.108.110.0/24,,OneLab Infrax XenServers
+10.108.111.0/24,,OneLab FTL Backend
+10.108.112.0/24,,OneLab FTL Prod
+10.108.113.0/24,,OneLab FTL Dev
+10.108.72.0/24,,OneLab Stage Mgmt
+10.108.73.0/24,,L3    OneLab XenRT
+10.108.8.0/24,,XenRT FTLONELAB01
+10.108.80.0/24,,OneLab FTL Mgmt
+10.108.81.0/24,,L3    OneLab XenRT
+10.108.82.0/24,,OneLab CP System VMs
+10.108.83.0/24,,OneLab Stage VMaaS
+10.108.84.0/24,,OneLab Stage VMaaS
+10.108.9.0/24,,XACT
+10.108.185.0/24,,System 2
+10.108.186.0/24,,System 2
+10.108.221.0/24,,System 2
+10.102.16.0/24,,SenthilKumar.Periasamy@cloud.com_Vlan303
+10.102.18.0/24,,Auth team   Srikanth Reddy
+10.102.19.0/24,,Ashoke Saha and Sajeev S
+10.102.22.0/24,,Gopal C_Vlan321
+10.102.24.0/24,,kiran.paul citrix.com_Vlan314
+10.102.25.0/24,,BLR5_10.102
+10.102.26.0/24,,Not In Use
+10.102.35.0/24,,Not In Use_Vlan334
+10.102.36.0/24,,kiran paul_Vlan329
+10.102.39.0/24,,BLR5_10.102
+10.102.4.0/24,,GLIS BLR_Test bed to IT Team Work Bench R2.69
+10.102.41.0/24,,gopal.cerukurpurushothaman@cloud.com_Vlan316
+10.102.42.0/24,,gopal.cerukurpurushothaman@cloud.com_Vlan317
+10.102.43.0/24,,Naresh Gopal C_Vlan315
+10.102.45.0/24,,sujitha s_Vlan346
+10.102.46.0/24,,Makesh Kesavan_Vlan330
+10.102.47.0/24,,Update_Owner_Info_Vlan325
+10.102.5.0/24,,DNPG team
+10.102.50.0/24,,BLR5_10.102
+10.102.52.0/24,,Xen mobile
+10.102.55.0/24,,Suman Babu Gogineni
+10.102.7.0/24,,BLR5_10.102
+10.102.128.0/24,,Tanveer Kazi_Team
+10.102.129.0/24,,SenthilKumar.Periasamy@cloud.com
+10.102.130.0/24,,Tanveer Kazi_Team
+10.102.131.0/24,,Tanveer Kazi_Team
+10.102.134.0/24,,SenthilKumar.Periasamy@cloud.com
+10.102.135.0/24,,Tanveer Kazi_Team
+10.102.136.0/24,,SenthilKumar.Periasamy@cloud.com_Vlan462
+10.102.138.0/24,,NetOps (himanshu.parihar handed over in 2016)
+10.102.139.0/24,,Xen mobile
+10.102.140.0/24,,Praveen Raja Dhanabalan
+10.102.142.0/24,,Xen mobile
+10.102.143.0/24,,surajit.ray
+10.102.144.0/24,,sathiya.viswanathan_Vlan309
+10.102.145.0/24,,BLR5_10.102
+10.102.161.0/24,,Tanveer Kazi_Team_Info
+10.102.162.0/24,,Tanveer Kazi_Team
+10.102.163.0/24,,Tanveer Kazi_Team
+10.102.164.0/24,,Sayandeb Kar
+10.102.167.0/24,,Preeti A
+10.102.171.0/24,,Hariharasudhan
+10.102.176.0/24,,SenthilKumar.Periasamy@cloud.com
+10.102.178.0/24,,Preethi A
+10.102.179.0/24,,Harihara Sudhan_Vlan303
+10.102.183.0/24,,(#NPG  EATS  SUPPORT SenthilKumar.Periasamy@cloud.com_Vlan303
+10.102.184.0/24,,BLR5_10.102
+10.102.189.0/24,,Kiran Paul_WSS Team
+10.102.200.0/24,,IP PDU
+10.102.205.0/24,,sayandeb.kar@cloud.com
+10.102.206.0/24,,BLR5_10.102
+10.102.215.0/24,,BLR5_10.102
+10.102.216.0/24,,komal.bharadwaj_Vlan310
+10.102.219.0/24,,deepakkumar.jha@cloud.com_Vlan329
+10.102.222.0/24,,BLR5_10.102
+10.102.228.0/24,,SenthilKumar.Periasamy@cloud.com_Vlan313
+10.102.229.0/24,,Anchala Bansal_Vlan331
+10.102.231.0/24,,Mohammad Daneesh N Kumbari_Vlan314
+10.102.235.0/24,,Update_Owner_Info_Vlan311
+10.102.238.0/24,,Preethi A_Vlan319
+10.102.240.0/24,,BLR5_10.102
+10.102.249.0/24,,BLR5_10.102
+10.102.251.0/24,,Anil B Shivanna_WSS Team
+10.102.254.0/24,,FRW MGMTN W
+10.102.255.0/24,,DMZ rack
+10.102.196.0/24,,deepakkumar.jha@cloud.com
+10.102.195.0/24,,deepakkumar.jha@cloud.com
+10.102.236.0/24,,ChaitanyaVarma.Penmetsa@cloud.com
+10.102.100.0/24,,tanveer.kazi@cloud.com_Info_Vlan307
+10.102.101.0/24,,vishal.soni@cloud.com_Vlan 302
+10.102.103.0/24,,raghu.goyal@cloud.com_Vlan338
+10.102.104.0/24,,SenthilKumar.Periasamy@cloud.com_Vlan303
+10.102.106.0/24,,Renu kela_Vlan332
+10.102.107.0/24,,abhishek.kumar02@cloud.com_Vlan343
+10.102.108.0/24,,BLR5_10.102
+10.102.110.0/24,,BLR5_10.102
+10.102.111.0/24,,BLR5_10.102
+10.102.112.0/24,,deepakkumar.jha@cloud.com_Vlan302
+10.102.113.0/24,,ashoke.saha@cloud.com_Vlan301
+10.102.114.0/24,,jyotiranjan.nayak_Vlan303
+10.102.115.0/24,,jyotiranjan.nayak_Vlan303
+10.102.116.0/24,,No Owner_Temp_Shutdown_Vlan305
+10.102.117.0/24,,BLR5_10.102
+10.102.118.0/24,,aman.chaudhary_Vlan307
+10.102.122.0/24,,Jayanthi Radhakrishnan
+10.102.123.0/24,,pradeep.ar@cloud.com_Vlan337
+10.102.124.0/24,,Praveen Kurer
+10.102.126.0/24,,abhishek.kumar02@cloud.com_Vlan323
+10.102.127.0/24,,SenthilKumar.Periasamy@cloud.com_Vlan345
+10.102.64.0/24,,MGMT_Connectivity_GLIS
+10.102.65.0/24,,chandni.jha
+10.102.66.0/24,,Mohammad Daneesh_Vlan303
+10.102.67.0/24,,Tanveer Kazi_Team
+10.102.68.0/24,,Tanveer Kazi_Team
+10.102.70.0/24,,deepakkumar.jha@cloud.com
+10.102.79.0/24,,Anand Medikeri_Vlan336
+10.102.83.0/24,,Rishabh Patel
+10.102.85.0/24,,Deepak Kumar Jha
+10.102.86.0/24,,Ashoke Saha_Vlan346
+10.102.88.0/24,,BLR5_10.102
+10.102.94.0/24,,Sumanth Lingappa
+10.105.1.0/24,,BLR4_MGMT N W
+10.105.2.0/24,,DMZ    IT_2E LR 15_42U
+10.105.3.0/24,,Xen_Mobile_Lab_Phase1_1st_Flr
+10.105.113.0/24,,BLR5_Lab_105
+10.105.118.0/24,,V Avinash Kumar\ Balaji Panchanathan_2D LR 09_21U
+10.105.119.0/24,,Deepak Pawaskar_2ELR11_23U
+10.105.128.0/24,,venkat rachipudi
+10.105.144.0/24,,BLR5_Lab_105
+10.105.145.0/24,,reeba.pa citrix.com_2D LR 07_20U
+10.105.146.0/24,,Not In Use_2E LR 15_23U
+10.105.150.0/24,,BLR5_Lab_105
+10.105.153.0/24,,BLR5_Lab_105
+10.105.154.0/24,,Guna Sekhar_2B LR 11_42U
+10.105.157.0/24,,Balaji Panchanathan_2D LR 09_21U
+10.105.158.0/24,,avinashkum1 \ Mayur Mohan Patil	\ Balaji Panchanathan_2D LR 09_21U
+10.105.159.0/24,,V Avinash Kumar\ Balaji Panchanathan_2D LR 09_21U
+10.105.16.0/24,,LCM    BLR Team_2B LR 14_23U
+10.105.24.0/24,,LCM    BLR Team_2B LR 13_21U
+10.105.28.0/24,,LCM    BLR Team_2B LR 13_21U
+10.105.160.0/24,,Sunil Kumar HH__2E LR 13_42U
+10.105.168.0/24,,Deepak Pawaskar _2E LR 16_41U
+10.105.171.0/24,,BLR5_Lab_105
+10.105.172.0/24,,Abhishek Pandey_2D LR 16_39U
+10.105.174.0/24,,Guna Sekhar_2B LR 11_42U
+10.105.188.0/24,,Srirama K _2B LR 02_39U
+10.105.193.0/24,,Srirama K _2B LR 02_39U
+10.105.195.0/24,,Rohit Lal Pradeep Sangana Basappa_2A LR 07_41U
+10.105.197.0/24,,Suman Babu Gogineni
+10.105.200.0/24,,BLR5_Lab_105
+10.105.202.0/24,,Not In Use_2D LR 05_21U
+10.105.210.0/24,,GLIS BLR_Athiq
+10.105.219.0/24,,BLR5_Lab_105
+10.105.222.0/24,,BLR5_Lab_105
+10.105.226.0/24,,SB Firewall MGMT N W
+10.105.232.0/24,,BLR5_Lab_105
+10.105.32.0/24,,Virinchi Varma Vannam
+10.105.34.0/24,,Hari Bhaskar S\Rajkumar V Rajamanickam_2B LR 10 _20U
+10.105.52.0/24,,2B  LR10  36U_Shuvan Saha
+10.105.53.0/24,,Not In Use_2B LR 11_41U
+10.105.56.0/24,,Not In Use_2A LR 01_26U
+10.105.60.0/24,,BLR5_Lab_105
+10.105.61.0/24,,Unknown_Owner_2B LR 02_41U
+10.105.63.0/24,,Deepti Kubair_2D LR 07_34U
+10.105.64.0/24,,Suman Babu Gogineni
+10.105.65.0/24,,Suman Babu Gogineni
+10.105.67.0/24,,Suman Babu Gogineni
+10.105.68.0/24,,Unknown_Owner_2B LR 10 _20U
+10.105.72.0/24,,Unidentified Owner    Temp Network Blocked
+10.105.73.0/24,,Rohit Lal
+10.105.74.0/24,,Rohit Lal
+10.105.75.0/24,,Avinash Khatri_2A LR 02_25U
+10.105.76.0/24,,Unknown_Owner_2B LR 11 _39U
+10.105.83.0/24,,Rohit Lal Pradeep Sangana Basappa_2A LR 07_26U
+10.105.85.0/24,,Shweta Jena _2C LR 04_23U
+10.105.86.0/24,,BLR5_Lab_105
+10.105.88.0/24,,Rohit Lal Pradeep Sangana Basappa_2A LR 07_41U
+10.105.92.0/24,,Rohit Lal Pradeep Sangana Basappa_2A LR 07_25U
+10.105.93.0/24,,"BLR4, Rack 2A LR 07"
+10.105.94.0/24,,Rohit Lal Pradeep Sangana Basappa_2A LR 07_28U
+10.105.95.0/24,,Rohit Lal Pradeep Sangana
+10.105.100.0/24,,BLR5_Lab_105
+10.105.102.0/24,,Anil B Shivanna _2E LR 15_23U
+10.105.103.0/24,,BLR5_Lab_105
+10.105.104.0/24,,BLR5_Lab_105
+10.105.107.0/24,,GLIS BLR ITCloud switch
+10.105.108.0/24,,Gourab Bayen_2A LR 01_25U
+10.105.110.0/24,,BLR5_Lab_105
+10.105.96.0/24,,Not In Use_2E LR 17_24U
+10.105.98.0/24,,BLR5_Lab_105
+10.105.99.0/24,,GLIS _2E LR 17_21  22U
+10.106.22.0/24,,Manjunath M_R107_17U
+10.106.25.0/24,,Arun Kumar S
+10.106.128.0/24,,Nan Zheng\Pradeep Gachinamani_Vlan333
+10.106.129.0/24,,Pradeep.Gachinamani Zhaoying Cao
+10.106.130.0/24,,Pradeep.Gachinamani Zhaoying Cao
+10.106.131.0/24,,Pradeep.Gachinamani Zhaoying Cao
+10.106.132.0/24,,Noah Dyvadheenam
+10.106.141.0/24,,BLR5_Lab_106
+10.106.158.0/24,,vishal soni_Vlan311
+10.106.159.0/24,,Not In Use
+10.106.163.0/24,,deepakkumar.jha@cloud.com
+10.106.165.0/24,,Deepika Sadanand _Vlan308
+10.106.37.0/24,,Renu Kela
+10.106.41.0/24,,Gopal C_Vlan341
+10.106.50.0/24,,Mohan Sekar (Product Security) _Vlan302
+10.106.51.0/24,,Mohan Sekar (Product Security) _Vlan332
+10.106.75.0/24,,Nan Zheng\Pradeep G_Vlan333
+10.106.76.0/24,,nasir.zahiruddin@cloud.com
+10.106.79.0/24,,Rahul cristus_Vlan345
+10.106.82.0/24,,Mohammad Daneesh_Vlan313
+10.106.87.0/24,,Mohammad Daneesh N Kumbari_Vlan313
+10.106.89.0/24,,Mohammad Daneesh N Kumbari_Vlan313
+10.106.92.0/24,,Mohammad Daneesh N Kumbari_Vlan313
+10.106.93.0/24,,Mohammad Daneesh N Kumbari_Vlan313
+10.106.94.0/24,,Mohammad Daneesh N Kumbari_Vlan313
+10.106.105.0/24,,WLAN Citrix  Eng SSID
+10.106.114.0/24,,Ravi Palankar
+10.106.125.0/24,,Suman kumar_Vlan333
+10.106.127.0/24,,BLR5_Lab_106
+10.106.96.0/24,,Mohammad Daneesh N Kumbari_Vlan313
+10.111.144.0/24,,BLR EDaaS    Cloud _ Infra
+10.111.145.0/24,,BLR EDaaS    Cloud _ Mgmt
+10.146.10.0/24,,BLR On  prime EdaaS project
+10.146.16.0/24,,BLR3  GLIS PRIVATE VPC SUBNETTED TO  30S
+10.146.20.0/24,,BLR3  GLIS  ASE DATA NET
+10.146.35.0/24,,Build_MNG
+10.146.36.0/24,,Paramjit Singh
+10.146.37.0/24,,Paramjit Singh
+10.146.38.0/24,,BLR3_SDWAN  Automation_Data
+10.146.39.0/24,,BLR3_SDWAN  Automation_MGMT
+10.146.40.0/24,,Networking Gateway
+10.146.41.0/24,,BLR3_SDWAN_DEV  ORCHESTRATOR_MGMT
+10.146.50.0/24,,cgop_hdx
+10.146.67.0/24,,Mohammad Daneesh_SSL_Testbed
+10.146.68.0/24,,Jayanthi R_ADM_POC
+10.146.85.0/24,,blr3_adc_netscaler_ssl_ashoke
+10.146.86.0/24,,blr3_adc_ns_automated_testbed
+10.146.87.0/24,,blr3_adc_ns_automated_testbed
+10.146.89.0/24,,blr3_adc_ns_policy
+10.146.90.0/24,,blr3_adc_ns_policy
+10.146.91.0/24,,blr3_adc_net_cnn
+10.146.93.0/24,,gopal.cerukurpurushothaman@cloud.com
+10.146.94.0/24,,gopal.cerukurpurushothaman@cloud.com
+10.146.95.0/24,,gopal.cerukurpurushothaman@cloud.com
+10.146.71.0/24,,Mohammad Daneesh
+10.146.72.0/24,,Mohammad Daneesh
+10.146.73.0/24,,Mohammad Daneesh
+10.146.74.0/24,,Mohammad Daneesh
+10.146.70.0/24,,Mohammad Daneesh
+10.146.75.0/24,,Mohammad Daneesh
+10.146.8.0/24,,BLR3  GLIS ACI INSIGHT
+10.146.33.0/24,,vassilis.tsogkas@cloud.com
+10.70.3.0/24,,SYS1  MGMT  INF (89)
+10.70.18.0/24,,XD  Automation  Test    VLAN 1090
+10.70.19.0/24,,XD  Automation  Blade  MGMT    VLAN1091
+10.70.28.0/24,,XD Auto 4    VLAN 203
+10.70.29.0/24,,XD Auto 5    VLAN 203
+10.70.30.0/24,,XD Auto 6    VLAN 203
+10.70.31.0/24,,XD Auto 7    VLAN 203
+10.70.148.0/24,,LCY2    Chsys2Storage    VLAN 205
+10.70.149.0/24,,LCY2    Chsys2LoanKit    VLAN 205
+10.70.150.0/24,,LCY2    Chsys2 Reserved    VLAN 205
+10.70.151.0/24,,LCY2    Chsys2 Reserved    VLAN 205
+10.70.177.0/24,,GLIS  EDaaS  Infrastructure
+10.70.192.0/24,,SYS1  MGMT  LAB (90)
+10.70.193.0/24,,SYS1  DATA  ENV  WIN2kAD (91)
+10.70.194.0/24,,SYS1  DATA  ENV  WIN2k3AD (92)
+10.70.195.0/24,,SYS1  DATA  ENV  WIN2k8R2AD (93)
+10.70.196.0/24,,SYS1  DATA  ENV  WIN2k12AD (94)
+10.70.197.0/24,,SYS1  DATA  ENV  WIN2k16AD (95)
+10.70.240.0/24,,XD Auto 12    VLAN 203
+10.70.241.0/24,,XD Auto 13    VLAN 203
+10.70.242.0/24,,
+10.70.244.0/24,,XD Auto 14    VLAN 203
+10.70.245.0/24,,XD Auto 15    VLAN 203
+10.70.246.0/24,,XD Auto 16    VLAN 203
+10.70.247.0/24,,XD Auto 17    VLAN 203
+10.70.248.0/24,,SYS1  DATA  AUTOMATION
+10.70.249.0/24,,XD Auto 18    VLAN 203
+10.70.250.0/24,,XD Auto 19    VLAN 203
+10.70.251.0/24,,XD Auto 20    VLAN 203
+10.70.252.0/24,,XD Auto 21    VLAN 203
+10.70.100.0/24,,XD Auto 11    VLAN 203
+10.70.101.0/24,,EI Equalogic Network
+10.70.102.0/24,,XD Auto 1    VLAN 1091
+10.70.103.0/24,,XD Auto 2    VLAN 1092
+10.70.122.0/24,,GLIS Development STRG
+10.70.97.0/24,,XD Auto 8    VLAN 203
+10.70.98.0/24,,XD Auto 9    VLAN 203
+10.70.99.0/24,,XD Auto 10    VLAN 203
+10.71.15.0/24,,LCY2    GLIS LABS UCS MGMT
+10.71.20.0/24,,XD Provisioning CP (I)    VLAN 1050
+10.71.21.0/24,,XD Provisioning CP (II)    VLAN1060
+10.71.22.0/24,,XD Provisioning DEV (XD  Provisioning  Dev)    VLAN 1070
+10.71.23.0/24,,CP  Lifecycle  Manager (Simon Waterhouse)
+10.71.3.0/24,,LCY2    Secure Build FW    VLAN 102
+10.71.234.0/24,,XS-SPARE-1
+10.71.235.0/24,,XS-SPARE-2
+10.71.32.0/24,,StoreFront Studio Dev (XD  Studio  Dev)    VLAN 1100
+10.71.33.0/24,,System3  Interop
+10.71.34.0/24,,RTST    Storage    VLAN 2000
+10.71.35.0/24,,XD  Automation  Test
+10.71.38.0/24,,XD  System3  CloudPlatform  2
+10.71.39.0/24,,XD  System3  CloudPlatform  3
+10.71.45.0/24,,SCM Team
+10.71.49.0/24,,XD  System3  Sys3lab  Colo    VLAN1130
+10.71.52.0/24,,XD Build (Storage)
+10.71.54.0/24,,DevOps Core Tools    Production Backend    VLAN 331
+10.71.55.0/24,,Devops    Build  (Reserved)
+10.71.108.0/24,,Sapho Test Enviroment
+10.71.109.0/24,,Sapho  Test  Services
+10.71.110.0/24,,Sapho  Test  Backend
+10.71.121.0/24,,LCY2   GLIS Nexus Management
+10.71.100.0/24,,New Workspace Mock Internet
+10.71.101.0/24,,New Workspace VM NET 1
+10.71.102.0/24,,New Workspace VM NET 2
+10.71.103.0/24,,Production DAS
+10.71.98.0/24,,DevOps_MGMT
+10.71.99.0/24,,New Workspace NetScaler DMZ
+10.75.0.0/24,,XACT UCS MGMT
+10.75.1.0/24,,XACT XenServer
+10.81.0.0/24,,EDaaS VM Supernetwork
+10.81.250.0/24,,CVAD AD DHCP Infrax
+10.81.252.0/24,,CVAD AD DHCP Infrax
+10.211.1.0/24,,SJC7  US  WEST  1  HUB  VNET  Core_Services
+10.211.144.0/24,,SJC7 EDaaS    Cloud _ Infra
+10.211.145.0/24,,SJC7 EDaaS    Cloud _ Mgmt
+10.211.146.0/24,,AZ Peering  CommVault PoC
+10.214.12.0/24,,Network Infra Link | GLIS
+10.214.13.0/24,,Lab363_SDW_NPI_Infra_Switches_MGMT
+10.214.14.0/24,,Lab363_SDW_NPI_Infra_PDU_MGMT
+10.214.15.0/24,,Lab363_SDW_NPI_Infra_Serial And KVM _MGMT
+10.214.176.0/24,,VLAN176
+10.214.33.0/24,,Ahsan   Mike Burns
+10.214.34.0/24,,Lab363|New Apple test bed ashokkumar.kondasekar@cloud.com
+10.217.0.0/24,,[Lab363]    Rack  B10 Raghu PTS (363 VLAN 301)
+10.217.1.0/24,,[Lab363]    kirk.radzivill@cloud.com (363 VLAN 2) Kirk Radzivill And manager is Kumaresan Rangasamy
+10.217.10.0/24,,[Lab363]    terminal_servers (363 VLAN 3)
+10.217.11.0/24,,[Lab363]    double nat (363 VLAN 306)
+10.217.16.0/24,,[Lab363]    Siva Krishnamurthy at Rack F9 (363 VLAN 349)
+10.217.17.0/24,,[Lab363]    Rack  E07 PTS Raghu (363 VLAN 331)
+10.217.18.0/24,,[Lab363]    C11 Shubham Mankhand (363 VLAN 309)
+10.217.19.0/24,,NS BU -  Vikram Majjari Rack 6A08 SJC7 VLAN 1646)
+10.217.25.0/24,,GLIS  DCS
+10.217.27.0/24,,[Lab363]    Lab DHCP server in Rack  C04 (363 VLAN 382)
+10.217.28.0/24,,AAA  GW    SJC7    Racks 5A.02    5A.05
+10.217.29.0/24,,[Lab363]    SSLVPNDEV90 (363 VLAN 90)
+10.217.3.0/24,,[Lab363] dorr.clark@cloud.com (363 VLAN 304)
+10.217.32.0/24,,AppFW Cache [2]
+10.217.4.0/24,,[Lab363]   ashoke.saha@cloud.com (363 VLAN 416)
+10.217.5.0/24,,[DC] NS And CB Build [1]
+10.217.6.0/24,,[Lab363]    NS LB Dev    Sergey Verzunov at Rack  E10 (363 VLAN 6)
+10.217.8.0/24,,[Lab363]    K02 ChaitanyaVarma.Penmetsa@cloud.com. SysTest Sanity (363 VLAN 23)
+10.217.131.0/24,,SJC1 Lab Networks
+10.217.133.0/24,,SJC1 Lab Networks
+10.217.135.0/24,,SJC1 Lab Networks
+10.217.138.0/24,,SJC1 Lab Networks
+10.217.142.0/24,,[Lab471] LabScaler [2]
+10.217.163.0/24,,SJC1 Lab Networks
+10.217.167.0/24,,SJC AV Wireless
+10.217.173.0/24,,SJC1 Lab Networks
+10.217.174.0/24,,[DC] NS And CB Build [3]
+10.217.175.0/24,,SJC1 DC (NetApp  NFS  old)
+10.217.196.0/24,,[Lab363]    L1 switch management at Rack  G4 (363 VLAN 196)
+10.217.197.0/24,,4988 GAP    Netscaler Lab 1
+10.217.198.0/24,,Not in Use
+10.217.201.0/24,,AAA  GW    SJC7    Racks 5A.02    5A.05
+10.217.202.0/24,,[Lab363]    SDX Dev    rack  G10 JN (363 VLAN 411)
+10.217.208.0/24,,AAA  GW    SJC7    Racks 5A.02    5A.05
+10.217.209.0/24,,[Lab363]    Sunitha Nagendra at F04 (363 VLAN 415)
+10.217.210.0/24,,[Lab363]   yi.wang03@cloud.com at H11 (363 VLAN 417)
+10.217.212.0/24,,[Lab363]    NS LB Dev    Josephine at E10 (363 VLAN 420)
+10.217.214.0/24,,[Lab363]    ByteMobile at J01 (363 VLAN 421)
+10.217.215.0/24,,[Lab363]    T3100  VPXPERF kirk.radzivill@cloud.com (363 VLAN 423)
+10.217.217.0/24,,AAA  GW    SJC7    Racks 5A.02    5A.05
+10.217.220.0/24,,[Lab363]    NS Sanity    K05 SenthilKumar.Periasamy@cloud.com Sanity (363 VLAN 390)
+10.217.228.0/24,,SJC1 Lab Networks
+10.217.231.0/24,,SJC1 Lab Networks
+10.217.232.0/24,,"XenMobile    SJC7    Racks 1A.03,1A.04"
+10.217.233.0/24,,SJC1 Lab Networks
+10.217.235.0/24,,SJC1 Lab Networks
+10.217.236.0/24,,SJC1 Lab Networks
+10.217.237.0/24,,SJC1 Lab Networks
+10.217.238.0/24,,SJC1 Lab Networks
+10.217.239.0/24,,[Lab257] NS Product Solutions Architects [8]
+10.217.240.0/24,,SJC1 Lab Networks
+10.217.241.0/24,,SJC1 Lab Networks
+10.217.242.0/24,,SJC1 Lab Networks
+10.217.252.0/24,,Not in use
+10.217.253.0/24,,Not in use
+10.217.254.0/24,,Not in use
+10.217.255.0/24,,Not in use
+10.217.100.0/24,,[Lab257] NS Product Solutions Architects [1]
+10.217.101.0/24,,[Lab257] NS Product Solutions Architects [2]
+10.217.104.0/24,,[Lab257] NS Product Solutions Architects [3]
+10.217.105.0/24,,[Lab257] NS Product Solutions Architects [4]
+10.217.106.0/24,,[Lab257] NS Product Solutions Architects [5]
+10.217.107.0/24,,SJC1 Lab Networks
+10.217.108.0/24,,SJC1 Lab Networks
+10.217.109.0/24,,SJC1 Lab Networks
+10.217.110.0/24,,[Lab255]    NPI XA XD    Richard Jiang
+10.217.111.0/24,,Decommissioned | Available Now
+10.217.113.0/24,,Decommissioned | Available Now
+10.217.114.0/24,,NS-MFG-NPI-1
+10.217.115.0/24,,NS-MFG-NPI-2
+10.217.116.0/24,,NS-MFG-NPI-3
+10.217.119.0/24,,[Lab257] NS Product Solutions Architects [7]
+10.217.120.0/24,,4988 GAP    Lab Server Network
+10.217.123.0/24,,IT  Management
+10.217.99.0/24,,NS Stress (Kirk) - SJC7 Rack 7A-11
+10.220.176.0/24,,"AAA  GW    Management ( 24) (KVM, XEN Server Managemet)"
+10.220.177.0/24,,Santa Clara 2
+10.220.184.0/24,,AAA  GW    SJC7    Racks 5A.02    5A.05
+10.221.32.0/24,,[Lab363]    F12parikshit.nadkarni@cloud.com (363 VLAN 403)
+10.221.36.0/24,,[Lab363]    B03  parikshit.nadkarni@cloud.com UCS CPX (363 VLAN 388)
+10.221.37.0/24,,[Lab363]    K01 PTS team (363 VLAN 407)
+10.221.38.0/24,,[Lab363]    B10 Shakthi CPX (363 VLAN 380)
+10.221.39.0/24,,[Lab363]    E07 Siva Krishnamurthy (Apple Cluster) (363 VLAN 430)
+10.221.40.0/24,,AAA  GW    SJC7    Racks 5A.02    5A.05
+10.221.41.0/24,,AAA  GW    SJC7    Racks 5A.02    5A.05
+10.221.42.0/24,,[Lab363]    NS MAS    C08 yi.wang03@cloud.com  (MAS) (363 VLAN 323)
+10.221.48.0/24,,[Lab363]    B11 parikshit.nadkarni@cloud.com (MAS) (363 VLAN 406)
+10.221.50.0/24,,[Lab363]    SDX Dev  shankar.krishnamurthy@cloud.com at C12 (363 VLAN 328)
+10.221.51.0/24,,AAA  GW    SJC7    Racks 5A.02    5A.05
+10.221.52.0/24,,SJC7 Rack 6A-09 Lakshmi Prasad  (Stress) (VLAN 1647)
+10.221.53.0/24,,SJC1  Engineering  II
+10.221.54.0/24,,[Lab363]    E10 NS Stress (Prasad) (363 VLAN 396)
+10.221.55.0/24,,[Lab 363]    J09 kirk.radzivill@cloud.com
+10.221.58.0/24,,SJC1  Engineering  II
+10.221.59.0/24,,kirk.radzivill@cloud.com
+10.221.129.0/24,,[Lab257]    R10
+10.221.136.0/24,,Ali Tahir  ali.tahir citrix.com
+10.222.0.0/24,,IT Infra Network
+10.222.13.0/24,,GLIS    INBMGMT    vlan 113
+10.222.14.0/24,,GLIS UCS MGMT    vlan 119
+10.222.24.0/24,,Available Network (Previously  XS  XENRT  SJC01  NSEC  1102)
+10.222.25.0/24,,Available Network (Previously  XENRT  SJC7  INF  MGMT  1100)
+10.222.4.0/24,,GLIS    Data
+10.222.5.0/24,,GLIS SJC7 Office
+10.222.6.0/24,,GLIS SWITCH MGMT (Nexus)
+10.222.7.0/24,,GLIS MGMT
+10.222.128.0/24,,SJC7 EDaaS SjcVM  1
+10.222.129.0/24,,SJC7 EDaaS SjcVM  2
+10.222.130.0/24,,SJC7 EDaaS SjcVM  3
+10.222.131.0/24,,SJC7 EDaaS SjcVM  4
+10.222.132.0/24,,SJC7 EDaaS SjcVM  5
+10.222.133.0/24,,SJC7 EDaaS SjcVM  6
+10.222.134.0/24,,SJC7 EDaaS SjcVM  7
+10.222.135.0/24,,SJC7 EDaaS SjcVM  8
+10.222.136.0/24,,SJC7 EDaaS SjcVM  9
+10.222.137.0/24,,SJC7 EDaaS SjcVM  10
+10.222.138.0/24,,SJC7 EDaaS SjcVM  11
+10.222.139.0/24,,SJC7 EDaaS SjcVM  12
+10.222.140.0/24,,SJC7 EDaaS SjcVM  13
+10.222.141.0/24,,SJC7 EDaaS SjcVM  14
+10.222.142.0/24,,SJC7 EDaaS SjcVM  15
+10.222.143.0/24,,SJC7 EDaaS SjcVM  16
+10.222.144.0/24,,SJC7 EDaaS    On Prem_Infra
+10.222.145.0/24,,SJC7 EDaaS    On Prem_Mgmt
+10.222.147.0/24,,SJC7 EDaaS    On Prem_HyperV Management
+10.222.160.0/24,,ICA_Testbed
+10.222.40.0/24,,GLIS  LaaS  PROD  1
+10.222.41.0/24,,GLIS  LaaS  PROD  2
+10.222.42.0/24,,GLIS PHaaS Production
+10.222.45.0/24,,"SJC7  Stress_MGMT | Parikshit Nadkarni, Raghu Sethuraman"
+10.222.47.0/24,,SB L3 Handoff
+10.222.48.0/24,,NS Sanity 1 | SenthilKumar.Periasamy@cloud.com
+10.222.49.0/24,,CIS_Analytics
+10.222.54.0/24,,SDW  SCALE  GEN  MGMT
+10.222.55.0/24,,SDW  SCALE  SVR  MGMT
+10.222.75.0/24,,NS_EATS_Automation | formerly SDWAN_Functional_Automation_1
+10.222.82.0/24,,SDWAN  DEV3  SHARED  KUTLUK  1 | Kutluk Testicioglu
+10.222.84.0/24,,SDWAN  DEV3  SHARED  KUTLUK  2 | Kutluk Testicioglu
+10.222.85.0/24,,SDWAN  DMZ  1 | ravishankar.subramaniyan@cloud.com
+10.222.86.0/24,,SDWAN  TEST2  ALANL  1 |alan.lo@cloud.com
+10.222.88.0/24,,Product Management Solutions    SJC7 6A15
+10.222.89.0/24,,OpenStack POC Data 2
+10.222.90.0/24,,OpenStack POC Data 3
+10.222.91.0/24,,OpenStack POC Data 4
+10.222.95.0/24,,DevOps_Core_Tools_VMs_1
+10.114.24.0/24,,Meraki P2P
+10.120.128.0/24,,Management
+10.120.129.0/24,,Security
+10.120.130.0/24,,Trusted Devices
+10.120.132.0/24,,Desktop1
+10.120.133.0/24,,Desktop2
+10.120.134.0/24,,Desktop3
+10.120.135.0/24,,Desktop4
+10.120.157.0/24,,Internet Devices
+10.120.158.0/24,,Conference Rooms
+10.120.159.0/24,,Visitor WIFI
+10.76.0.0/24,,Lab-VLAN710
+10.76.1.0/24,,Lab-VLAN711
+10.76.2.0/24,,Lab-VLAN712
+10.76.3.0/24,,Lab-VLAN713
+10.76.6.0/24,,Lab-VLAN730
+10.120.194.0/24,,Desktops 5th Floor
+10.120.198.0/24,,Citrix-Corp
+10.120.202.0/24,,IP Phones
+10.120.207.0/24,,Cloud_SG-Visitor
+10.125.226.0/24,,Desktops1
+10.125.227.0/24,,Desktops2
+10.118.0.0/24,,Management
+10.118.2.0/24,,Security
+10.118.4.0/24,,Trusted Devices
+10.118.8.0/24,,Desktops
+10.118.58.0/24,,Internet Devices
+10.118.60.0/24,,Conference Rooms
+10.118.62.0/24,,Visitor WiFi 1
+10.118.194.0/24,,Desktops-1
+10.118.195.0/24,,Desktops-2
+10.98.160.0/24,,vpn-blr4 - Global Protect VPN
+10.124.128.0/24,,Management
+10.124.129.0/24,,Security
+10.124.130.0/24,,Trusted Devices
+10.124.132.0/24,,Desktops1
+10.124.133.0/24,,Desktops-2
+10.124.134.0/24,,Desktops-3
+10.124.135.0/24,,Desktops-4
+10.124.156.0/24,,Tibco-Guest
+10.124.157.0/24,,Internet-Devices
+10.124.158.0/24,,Conference Rooms
+10.124.159.0/24,,Cloud_SG-Guest
+10.164.223.0/24,,vnet_lab_labstage-team_poc_ue
+10.147.174.0/24,,vnet_lab_labstage-team_poc_ic
+10.233.86.0/24,,EBX K8 Service
+10.206.9.0/24,,SJC Legacy Security Devices - cannot Re-IP
+10.112.1.0/24,,AP1 DMZ Private
+10.145.192.0/24,,vnet_lab_ns_esc_na_shift_prd_ci
+10.242.239.0/24,,HST Spotfire SPC Endpoint
+10.164.230.0/24,,vnet_lab_hdxcqe_cqe_prd_ue
+10.61.1.0/24,,IT-INF-MGMT-PDUs-R&D-101
+10.61.2.0/24,,IT-INF-MGMT-PDUs-Prod-102
+10.61.14.0/24,,IT Infra Network
+10.61.24.0/24,,IT Infra Network
+10.61.170.0/24,,IT Infra Network
+10.61.171.0/24,,IT Infra Network
+10.61.206.0/24,,IT Infra Network
+10.169.0.0/24,,test vdi
+10.203.16.0/24,,TIBCO BU
+10.203.17.0/24,,AWS TestShared 593625484736 VPC
+10.203.18.0/24,,TBCO - Platform QA
+10.203.19.0/24,,split_subnet_5_4
+10.217.117.0/24,,NS-MFG-NPI-4
+10.240.206.0/24,,subnet-it-bi-dev-ue-k8-service
+10.240.210.0/24,,subnet-it-bi-prd-ue-k8-service
+10.240.160.0/24,,prj-bi-prd-80200d-proxy
+10.223.254.0/24,,Ensono-Mainframe
+10.146.100.0/24,,BLR3 LAB
+10.222.101.0/24,,AAAGW_14_SWA-6
+10.242.44.0/24,,spt - gke - service
+10.70.1.0/24,,External DMZ backend
+162.221.158.0/24,,NA2-GTT-Meraki
+162.221.159.0/24,,NA2-TATA-Meraki
+10.169.1.0/24,,BOA vdi prd
+10.61.215.0/24,,
+10.61.178.0/24,,
+10.61.222.0/24,,
+10.61.223.0/24,,
+10.61.190.0/24,,
+10.61.217.0/24,,
+10.61.219.0/24,,
+10.61.218.0/24,,
+10.61.214.0/24,,DynamicallyAdded
+10.61.220.0/24,,
+10.61.216.0/24,,
+10.61.191.0/24,,
+10.61.210.0/24,,
+10.61.212.0/24,,
+10.61.187.0/24,,
+10.61.221.0/24,,
+10.61.211.0/24,,
+10.61.208.0/24,,
+10.61.213.0/24,,
+10.61.209.0/24,,
+10.207.72.0/24,,
+10.207.81.0/24,,DynamicallyAdded
+10.146.53.0/24,,
+10.146.30.0/24,,
+10.146.47.0/24,,
+10.146.52.0/24,,
+10.146.51.0/24,,
+10.88.21.0/24,,reserved
+10.88.14.0/24,,reserved infra
+10.88.25.0/24,,reserved
+10.240.161.0/24,,prj-bi-prd-80200d-psc
+10.240.65.0/24,,IT SAP
+10.240.66.0/24,,IT SAP Netapp
+10.223.251.0/24,,OCI - gcpfusioncloud dev - uw
+10.223.250.0/24,,OCI - gcpfusioncloud prd - uw
+10.223.248.0/24,,OCI - gcpfusioncloud ord - ue
+10.105.8.0/24,,
+10.146.104.0/24,,
+10.146.105.0/24,,
+10.146.120.0/24,,
+10.64.36.0/24,,need to look into
+10.101.1.0/24,,console_mgmt
+10.101.3.0/24,,PDU_mgmt
+10.88.0.0/24,,INFRA_switch_mgmt
+10.88.1.0/24,,INFRA_console_mgmt
+10.88.2.0/24,,reserved infra
+10.88.3.0/24,,INFRA_pdu_mgmt
+10.88.5.0/24,,reserved infra
+10.240.180.0/24,,prj-biz-dev-84000 - subnet-it-biz-psc-dev-ue
+10.223.249.0/24,,OCI ORDS API
+10.101.84.0/24,,Netscaler-LB-DEV
+10.101.85.0/24,,Netscaler-LCM
+10.133.44.0/24,,Unicon
+10.165.24.0/24,,boa

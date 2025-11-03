@@ -26,6 +26,7 @@ By combining vulnerability data (e.g., Tenable, OpenVAS), asset inventories (e.g
 - 🔄 **Auto-Reloading Data** — Automatically detects and reloads CSV updates in real time.  
 - 🧠 **LLM Reasoning** — Uses OpenAI’s cost-effective `gpt-4o-mini` model.  
 - 🧩 **Multi-CVE Support** — Each asset can list multiple CVEs and have them grouped automatically.  
+- 📊 **Supports Raw Data Headers** — Reads real-world dataset headers like `asset.name`, `definition.cve`, and `definition.cvss3.base_score`.  
 - 🪵 **Logging & Error Handling** — Tracks reloads, data integrity, and operational messages.  
 - 🧱 **Modular Design** — Easily extendable for new data sources or AI-driven enrichment.
 
@@ -40,7 +41,7 @@ vbg_vuln_agent/
 │   ├── data_tools.py       # Handles data loading, merging, and subnet correlation (multi-CVE aware)
 │   └── analyzer.py         # Provides summarization and prioritization logic
 ├── data/
-│   ├── vulnerabilities.csv # Sample vulnerability data (supports multiple CVEs per row)
+│   ├── vulnerabilities.csv # Sample vulnerability data (supports raw headers and multiple CVEs)
 │   ├── assets.csv          # Sample asset data
 │   └── subnets.csv         # Sample subnet definitions
 ├── requirements.txt        # Dependencies
@@ -115,10 +116,11 @@ Critical    External   1
 ## 🧠 Example Data
 
 ### `data/vulnerabilities.csv`
+*(Now aligned with real-world exported field names)*
 ```csv
-cve_id,asset_id,severity,cvss_score,description
-CVE-2024-1234;CVE-2024-5678,web01,High,8.9,Multiple Apache RCE vulnerabilities
-CVE-2023-5421;CVE-2023-7890,db01,Critical,9.8,Kernel privilege escalation and buffer overflow
+asset.name,definition.cve,definition.cvss3.base_score,severity
+web01,CVE-2024-1111;CVE-2024-2222,8.9,High
+db01,CVE-2023-5421;CVE-2023-7890,9.8,Critical
 ```
 
 ### `data/assets.csv`
@@ -134,6 +136,8 @@ subnet,type,description
 10.0.0.0/24,Internal,Corporate Web Servers
 172.16.0.0/16,External,Public Systems
 ```
+
+> The program automatically maps raw headers to normalized fields (`asset.name` → `asset_id`, `definition.cve` → `cve_id`, etc.) for internal use.
 
 ---
 
@@ -158,8 +162,7 @@ The application logs to both the console and `agent.log`, recording:
 
 ## 🤝 Credits & Collaboration
 
-This project was **designed and developed by [Juan Janolo (audin30)](https://github.com/audin30)**  
-in close **collaboration with ChatGPT and OpenAI**, combining cybersecurity expertise with state-of-the-art AI technology.
+This project was designed by audin30. Coding done by OpenAI/ChatGPT
 
 > Together, the goal is to make vulnerability management more intelligent, contextual, and efficient.
 
