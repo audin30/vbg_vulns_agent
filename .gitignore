@@ -2,4 +2,4 @@ open_ai_key
 .env
 open_ai_key*
 vbg_vuln_agent_updated.zip
-
+data/*
