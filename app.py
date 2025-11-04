@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import os
+import re
 import logging
 from datetime import datetime
 import pandas as pd
@@ -24,6 +25,35 @@ print("💬  LLM connectivity check is optional in this CLI-only build.")
 print("──────────────────────────────────────────────\n")
 
 # ----------------------------------------------------
+# ANSI Helpers for Table Alignment
+# ----------------------------------------------------
+ANSI_ESCAPE = re.compile(r'\x1B(?:[@-Z\\-_]|\[[0-?]*[ -/]*[@-~])')
+
+def strip_ansi(text):
+    """Remove ANSI escape codes for width calculations."""
+    return ANSI_ESCAPE.sub('', str(text))
+
+def make_pretty_table(df, cols):
+    """Render table aligned even with color codes."""
+    safe_df = df.copy()
+    for c in safe_df.columns:
+        safe_df[c] = safe_df[c].apply(strip_ansi)
+
+    table_clean = tabulate(
+        safe_df[cols],
+        headers=[c.upper().replace("_", " ") for c in cols],
+        tablefmt="fancy_grid",
+        showindex=False
+    )
+
+    # Restore colorized severity column
+    if "severity" in cols:
+        for _, row in df.iterrows():
+            table_clean = table_clean.replace(strip_ansi(row["severity"]), row["severity"], 1)
+
+    return table_clean
+
+# ----------------------------------------------------
 # Data Loading + Auto Reload
 # ----------------------------------------------------
 def safe_list_data_files():
@@ -34,7 +64,7 @@ def safe_list_data_files():
         return []
 
 df = correlate_data()
-# normalize ip naming
+# Normalize IP
 if "ip_address" in df.columns and "ip" not in df.columns:
     df.rename(columns={"ip_address": "ip"}, inplace=True)
 
@@ -86,7 +116,7 @@ def _maybe_export(query: str, filtered: pd.DataFrame, label: str) -> str:
 # Commands
 # ----------------------------------------------------
 def cmd_list_by_severity(query: str) -> str:
-    """List vulnerabilities by one or more severities."""
+    """List vulnerabilities by severity."""
     try:
         refresh_data_if_changed()
         if df.empty:
@@ -101,7 +131,6 @@ def cmd_list_by_severity(query: str) -> str:
         if filtered.empty:
             return f"No vulnerabilities found with severities: {', '.join(requested)}."
 
-        # Sort
         sort_cols = ["severity"] + (["cvss_score"] if "cvss_score" in filtered.columns else [])
         filtered = filtered.sort_values(by=sort_cols, ascending=[True, False])
 
@@ -109,18 +138,13 @@ def cmd_list_by_severity(query: str) -> str:
         if "severity" in disp.columns:
             disp["severity"] = disp["severity"].apply(_colorize_severity)
 
-        # --- Build display columns (include IP always if exists) ---
-        display_cols = []
-        for col in ["asset_id", "ip", "cve_id", "severity", "cvss_score", "owner"]:
-            if col in disp.columns:
-                display_cols.append(col)
+        # Display columns
+        display_cols = [c for c in ["asset_id", "ip", "cve_id", "severity", "cvss_score", "owner"] if c in disp.columns]
         if "escalation_reason" in disp.columns and disp["escalation_reason"].astype(str).str.len().sum() > 0:
             disp["escalation_reason"] = disp["escalation_reason"].apply(lambda x: (x[:120] + "...") if len(str(x)) > 120 else x)
             display_cols.append("escalation_reason")
 
-        table = tabulate(disp[display_cols],
-                         headers=[c.upper().replace("_", " ") for c in display_cols],
-                         tablefmt="fancy_grid", showindex=False)
+        table = make_pretty_table(disp, display_cols)
         result = f"Vulnerabilities with severities ({', '.join(requested)}):\n\n{table}"
 
         if "escalation_reason" in filtered.columns:
@@ -136,7 +160,7 @@ def cmd_list_by_severity(query: str) -> str:
         return f"Error listing by severity: {e}"
 
 def cmd_list_by_asset(query: str) -> str:
-    """List vulnerabilities for a specific asset or IP."""
+    """List vulnerabilities for an asset/IP."""
     try:
         refresh_data_if_changed()
         if df.empty:
@@ -181,17 +205,12 @@ def cmd_list_by_asset(query: str) -> str:
         if "severity" in disp.columns:
             disp["severity"] = disp["severity"].apply(_colorize_severity)
 
-        display_cols = []
-        for col in ["asset_id", "ip", "cve_id", "severity", "cvss_score", "owner"]:
-            if col in disp.columns:
-                display_cols.append(col)
+        display_cols = [c for c in ["asset_id", "ip", "cve_id", "severity", "cvss_score", "owner"] if c in disp.columns]
         if "escalation_reason" in disp.columns and disp["escalation_reason"].astype(str).str.len().sum() > 0:
             disp["escalation_reason"] = disp["escalation_reason"].apply(lambda x: (x[:120] + "...") if len(str(x)) > 120 else x)
             display_cols.append("escalation_reason")
 
-        table = tabulate(disp[display_cols],
-                         headers=[c.upper().replace("_", " ") for c in display_cols],
-                         tablefmt="fancy_grid", showindex=False)
+        table = make_pretty_table(disp, display_cols)
         result = f"Vulnerabilities for '{target}':\n\n{table}"
 
         if "escalation_reason" in filtered.columns:
@@ -242,12 +261,12 @@ def cmd_scan(query: str) -> str:
         if not enabled_by_config and not provided_ports_manually:
             return ("Active scanning is disabled in config. Enable it by setting\n"
                     "`config/severity_rules.json` -> \"active_scan\": { \"enabled\": true }\n"
-                    "or provide explicit ports on the command line (e.g. `scan 10.0.1.5 8080 8443`).")
+                    "or provide explicit ports (e.g. `scan 10.0.1.5 8080 8443`).")
 
         open_ports = tcp_scan_ports(target, ports, timeout=float(timeout), max_workers=int(workers))
         lines = [f"Scan results for {target} (timeout={timeout}s, workers={workers}):"]
         if not open_ports:
-            lines.append("  No open ports detected among the tested ports.")
+            lines.append("  No open ports detected.")
         else:
             lines.append(f"  Open ports: {', '.join(map(str, open_ports))}")
             risky = set(cfg.get("risky_ports", []))
@@ -255,9 +274,9 @@ def cmd_scan(query: str) -> str:
             hit_risky = sorted([p for p in open_ports if p in risky])
             hit_nonstd = sorted([p for p in open_ports if p in nonstd and p not in risky])
             if hit_risky:
-                lines.append(f"  ⚠️ Found risky port(s) that may trigger immediate escalation: {', '.join(map(str, hit_risky))}")
+                lines.append(f"  ⚠️ Found risky port(s): {', '.join(map(str, hit_risky))}")
             if hit_nonstd:
-                lines.append(f"  ⚠️ Found non-standard port(s): {', '.join(map(str, hit_nonstd))} (suggest bumping severity by 1)")
+                lines.append(f"  ⚠️ Found non-standard port(s): {', '.join(map(str, hit_nonstd))}")
         lines.append("\nNote: Only scan hosts you are authorized to test.")
         return "\n".join(lines)
 
@@ -272,7 +291,7 @@ HELP = """\
 Commands:
   - list high|critical|medium|low [and ...] [export/save/csv]
   - show <asset_or_ip> [high|critical|...] [export/save/csv]
-  - scan <ip> [port1 port2 ...] [timeout=SECONDS] [workers=N]   # active TCP connect scan (opt-in)
+  - scan <ip> [port1 port2 ...] [timeout=SECONDS] [workers=N]
 Examples:
   > list high and critical
   > show web01
