@@ -1,1 +1,15 @@
-{"risky_ports":[22,3389,3306],"escalation_map":{"Low":"Medium","Medium":"High","High":"Critical","Critical":"Critical"}}
+{
+  "risky_ports": [22, 3389, 3306],
+  "non_standard_ports": [23, 5900, 8080, 8443, 33060],
+  "active_scan": {
+    "enabled": true,
+    "timeout_seconds": 0.5,
+    "max_workers": 30
+  },
+  "escalation_map": {
+    "Low": "Medium",
+    "Medium": "High",
+    "High": "Critical",
+    "Critical": "Critical"
+  }
+}
