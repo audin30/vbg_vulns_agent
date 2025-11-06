@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 
 # Local modules
 from tools.data_tools import correlate_data, tcp_scan_ports, load_escalation_config
-from tools.analyzer import get_vulnerability_summary, get_critical_assets, get_asset_summary
+from tools.analyzer import get_vulnerability_summary, get_critical_assets, get_asset_summary, correlate_with_firewall
 
 # ----------------------------------------------------
 # Environment + Logging
@@ -30,28 +30,37 @@ print("────────────────────────�
 ANSI_ESCAPE = re.compile(r'\x1B(?:[@-Z\\-_]|\[[0-?]*[ -/]*[@-~])')
 
 def strip_ansi(text):
-    """Remove ANSI escape codes for width calculations."""
+    """Remove ANSI escape codes."""
     return ANSI_ESCAPE.sub('', str(text))
 
 def make_pretty_table(df, cols):
-    """Render table aligned even with color codes."""
+    """Render ANSI-aligned table manually to preserve color and spacing."""
+    if df.empty or not cols:
+        return "No data to display."
+
     safe_df = df.copy()
     for c in safe_df.columns:
         safe_df[c] = safe_df[c].apply(strip_ansi)
 
-    table_clean = tabulate(
-        safe_df[cols],
-        headers=[c.upper().replace("_", " ") for c in cols],
-        tablefmt="fancy_grid",
-        showindex=False
-    )
+    # Compute column widths
+    widths = {c: safe_df[c].astype(str).map(len).max() for c in cols}
+    for c in cols:
+        header_len = len(c.upper().replace("_", " "))
+        if widths[c] < header_len:
+            widths[c] = header_len
 
-    # Restore colorized severity column
-    if "severity" in cols:
-        for _, row in df.iterrows():
-            table_clean = table_clean.replace(strip_ansi(row["severity"]), row["severity"], 1)
+    # Build header
+    header = " │ ".join(c.upper().replace("_", " ").ljust(widths[c]) for c in cols)
+    sep = "─" * (len(header) + 4)
+    lines = [sep, f"│ {header} │", sep]
 
-    return table_clean
+    # Build rows
+    for _, row in df.iterrows():
+        row_str = " │ ".join(str(row[c]).ljust(widths[c]) if c in df.columns else "" for c in cols)
+        lines.append(f"│ {row_str} │")
+
+    lines.append(sep)
+    return "\n".join(lines)
 
 # ----------------------------------------------------
 # Data Loading + Auto Reload
@@ -64,7 +73,6 @@ def safe_list_data_files():
         return []
 
 df = correlate_data()
-# Normalize IP
 if "ip_address" in df.columns and "ip" not in df.columns:
     df.rename(columns={"ip_address": "ip"}, inplace=True)
 
@@ -113,190 +121,111 @@ def _maybe_export(query: str, filtered: pd.DataFrame, label: str) -> str:
     return f"\n\n💾 Exported \033[92m{len(filtered)}\033[0m rows to: \033[96m{path}\033[0m"
 
 # ----------------------------------------------------
-# Commands
+# Commands: List, Show, Scan, Correlate
 # ----------------------------------------------------
 def cmd_list_by_severity(query: str) -> str:
     """List vulnerabilities by severity."""
-    try:
-        refresh_data_if_changed()
-        if df.empty:
-            return "No data loaded yet. Place CSVs in ./data and try again."
+    refresh_data_if_changed()
+    if df.empty:
+        return "No data loaded yet. Place CSVs in ./data and try again."
 
-        keys = ["critical", "high", "medium", "low", "info", "informational"]
-        requested = [k.capitalize() for k in keys if k in query.lower()]
-        if not requested:
-            return "Please specify severities (e.g., High, Critical, Medium, Low)."
+    keys = ["critical", "high", "medium", "low", "info", "informational"]
+    requested = [k.capitalize() for k in keys if k in query.lower()]
+    if not requested:
+        return "Please specify severities (e.g., High, Critical, Medium, Low)."
 
-        filtered = df[df["severity"].str.lower().isin([s.lower() for s in requested])]
-        if filtered.empty:
-            return f"No vulnerabilities found with severities: {', '.join(requested)}."
+    filtered = df[df["severity"].str.lower().isin([s.lower() for s in requested])]
+    if filtered.empty:
+        return f"No vulnerabilities found with severities: {', '.join(requested)}."
 
-        sort_cols = ["severity"] + (["cvss_score"] if "cvss_score" in filtered.columns else [])
-        filtered = filtered.sort_values(by=sort_cols, ascending=[True, False])
+    filtered = filtered.sort_values(by=["severity", "cvss_score"], ascending=[True, False])
+    disp = filtered.copy()
+    disp["severity"] = disp["severity"].apply(_colorize_severity)
 
-        disp = filtered.copy()
-        if "severity" in disp.columns:
-            disp["severity"] = disp["severity"].apply(_colorize_severity)
+    display_cols = [c for c in ["asset_id", "ip", "cve_id", "severity", "cvss_score", "owner", "escalation_reason"] if c in disp.columns]
+    table = make_pretty_table(disp, display_cols)
+    result = f"Vulnerabilities with severities ({', '.join(requested)}):\n\n{table}"
 
-        # Display columns
-        display_cols = [c for c in ["asset_id", "ip", "cve_id", "severity", "cvss_score", "owner"] if c in disp.columns]
-        if "escalation_reason" in disp.columns and disp["escalation_reason"].astype(str).str.len().sum() > 0:
-            disp["escalation_reason"] = disp["escalation_reason"].apply(lambda x: (x[:120] + "...") if len(str(x)) > 120 else x)
-            display_cols.append("escalation_reason")
+    result += _maybe_export(query, filtered, f"vulns_{'_'.join(requested)}")
+    return result
 
-        table = make_pretty_table(disp, display_cols)
-        result = f"Vulnerabilities with severities ({', '.join(requested)}):\n\n{table}"
-
-        if "escalation_reason" in filtered.columns:
-            num_esc = (filtered["escalation_reason"].astype(str).str.len() > 0).sum()
-            if num_esc:
-                result += f"\n\n⚠️ {num_esc} vulnerabilities escalated due to risky open ports."
-
-        result += _maybe_export(query, filtered, f"vulns_{'_'.join(requested)}")
-        return result
-
-    except Exception as e:
-        logging.exception("Error in cmd_list_by_severity: %s", e)
-        return f"Error listing by severity: {e}"
 
 def cmd_list_by_asset(query: str) -> str:
-    """List vulnerabilities for an asset/IP."""
-    try:
-        refresh_data_if_changed()
-        if df.empty:
-            return "No data loaded yet. Place CSVs in ./data and try again."
+    """List vulnerabilities for a specific asset or IP."""
+    refresh_data_if_changed()
+    if df.empty:
+        return "No data loaded yet. Place CSVs in ./data and try again."
 
-        target = None
-        ignore_words = {"show", "list", "export", "save", "csv", "write", "for", "with", "the", "and"}
-        for tok in query.replace(",", " ").split():
-            t = tok.strip().lower()
-            if t in ignore_words:
-                continue
-            if "." in t or any(ch.isalnum() for ch in t):
-                if t in {"high", "critical", "medium", "low", "info", "informational"}:
-                    continue
-                target = tok.strip()
-                break
+    target = None
+    ignore_words = {"show", "list", "export", "save", "csv", "write", "for", "with", "the", "and"}
+    for tok in query.replace(",", " ").split():
+        t = tok.strip().lower()
+        if t in ignore_words:
+            continue
+        if "." in t or any(ch.isalnum() for ch in t):
+            target = tok.strip()
+            break
 
-        if not target:
-            return "Please include an asset name or IP (e.g., 'web01' or '10.0.0.10')."
+    if not target:
+        return "Please include an asset name or IP (e.g., 'web01' or '10.0.0.10')."
 
-        keys = ["critical", "high", "medium", "low", "info", "informational"]
-        requested = [k.capitalize() for k in keys if k in query.lower()]
+    mask = pd.Series([False] * len(df))
+    if "asset_id" in df.columns:
+        mask |= df["asset_id"].astype(str).str.contains(target, case=False, na=False)
+    if "ip" in df.columns:
+        mask |= df["ip"].astype(str).str.contains(target, case=False, na=False)
+    filtered = df[mask]
+    if filtered.empty:
+        return f"No vulnerabilities found for '{target}'."
 
-        mask = pd.Series([False] * len(df))
-        if "asset_id" in df.columns:
-            mask |= df["asset_id"].astype(str).str.contains(target, case=False, na=False)
-        if "ip" in df.columns:
-            mask |= df["ip"].astype(str).str.contains(target, case=False, na=False)
+    disp = filtered.copy()
+    disp["severity"] = disp["severity"].apply(_colorize_severity)
+    display_cols = [c for c in ["asset_id", "ip", "cve_id", "severity", "cvss_score", "owner", "escalation_reason"] if c in disp.columns]
 
-        filtered = df[mask]
-        if filtered.empty:
-            return f"No vulnerabilities found for '{target}'."
+    table = make_pretty_table(disp, display_cols)
+    result = f"Vulnerabilities for '{target}':\n\n{table}"
+    result += _maybe_export(query, filtered, f"vulns_{target}")
+    return result
 
-        if requested:
-            filtered = filtered[filtered["severity"].str.lower().isin([s.lower() for s in requested])]
-            if filtered.empty:
-                return f"No vulnerabilities found for {target} with severities: {', '.join(requested)}."
 
-        sort_cols = ["severity"] + (["cvss_score"] if "cvss_score" in filtered.columns else [])
-        filtered = filtered.sort_values(by=sort_cols, ascending=[True, False])
-        disp = filtered.copy()
-        if "severity" in disp.columns:
-            disp["severity"] = disp["severity"].apply(_colorize_severity)
+def cmd_correlate_firewall(query: str) -> str:
+    """Correlate vulnerabilities with firewall rules and escalate severity."""
+    refresh_data_if_changed()
+    if df.empty:
+        return "No vulnerability data found."
 
-        display_cols = [c for c in ["asset_id", "ip", "cve_id", "severity", "cvss_score", "owner"] if c in disp.columns]
-        if "escalation_reason" in disp.columns and disp["escalation_reason"].astype(str).str.len().sum() > 0:
-            disp["escalation_reason"] = disp["escalation_reason"].apply(lambda x: (x[:120] + "...") if len(str(x)) > 120 else x)
-            display_cols.append("escalation_reason")
+    fw_path = os.path.join("data", "firewall_rules.csv")
+    if not os.path.exists(fw_path):
+        return "⚠️ No firewall_rules.csv found in ./data"
 
-        table = make_pretty_table(disp, display_cols)
-        result = f"Vulnerabilities for '{target}':\n\n{table}"
+    fw_df = pd.read_csv(fw_path)
+    correlated = correlate_with_firewall(df, fw_df)
+    if correlated.empty:
+        return "No correlations found between vulnerabilities and firewall rules."
 
-        if "escalation_reason" in filtered.columns:
-            num_esc = (filtered["escalation_reason"].astype(str).str.len() > 0).sum()
-            if num_esc:
-                result += f"\n\n⚠️ {num_esc} vulnerabilities escalated due to risky open ports."
+    correlated["effective_severity"] = correlated["effective_severity"].apply(_colorize_severity)
 
-        label = f"vulns_{target}" if not requested else f"vulns_{target}_{'_'.join(requested)}"
-        result += _maybe_export(query, filtered, label)
-        return result
+    display_cols = ["asset_id", "ip", "cve_id", "base_severity", "effective_severity", "firewall_ports", "firewall_escalation"]
+    table = make_pretty_table(correlated, display_cols)
+    result = f"🔐 Correlation Results (Firewall-Aware Severity):\n\n{table}"
 
-    except Exception as e:
-        logging.exception("Error in cmd_list_by_asset: %s", e)
-        return f"Error listing by asset: {e}"
+    result += _maybe_export(query, correlated, "firewall_correlation")
+    return result
 
-def cmd_scan(query: str) -> str:
-    """Active TCP port scan command."""
-    try:
-        toks = query.replace(",", " ").split()
-        if len(toks) < 2:
-            return "Usage: scan <ip> [port1 port2 ...] [timeout=SECONDS] [workers=N]"
-
-        target = toks[1].strip()
-        ports, timeout, workers = [], None, None
-        for t in toks[2:]:
-            if "=" in t:
-                k, v = t.split("=", 1)
-                if k.lower() == "timeout":
-                    try: timeout = float(v)
-                    except Exception: pass
-                elif k.lower() == "workers":
-                    try: workers = int(v)
-                    except Exception: pass
-            elif t.isdigit():
-                ports.append(int(t))
-
-        cfg = load_escalation_config() or {}
-        if not ports:
-            ports = cfg.get("non_standard_ports", [])
-        if timeout is None:
-            timeout = cfg.get("active_scan", {}).get("timeout_seconds", 0.5)
-        if workers is None:
-            workers = cfg.get("active_scan", {}).get("max_workers", 20)
-
-        active_cfg = cfg.get("active_scan", {})
-        enabled_by_config = bool(active_cfg.get("enabled", False))
-        provided_ports_manually = len([t for t in toks[2:] if t.isdigit()]) > 0
-        if not enabled_by_config and not provided_ports_manually:
-            return ("Active scanning is disabled in config. Enable it by setting\n"
-                    "`config/severity_rules.json` -> \"active_scan\": { \"enabled\": true }\n"
-                    "or provide explicit ports (e.g. `scan 10.0.1.5 8080 8443`).")
-
-        open_ports = tcp_scan_ports(target, ports, timeout=float(timeout), max_workers=int(workers))
-        lines = [f"Scan results for {target} (timeout={timeout}s, workers={workers}):"]
-        if not open_ports:
-            lines.append("  No open ports detected.")
-        else:
-            lines.append(f"  Open ports: {', '.join(map(str, open_ports))}")
-            risky = set(cfg.get("risky_ports", []))
-            nonstd = set(cfg.get("non_standard_ports", []))
-            hit_risky = sorted([p for p in open_ports if p in risky])
-            hit_nonstd = sorted([p for p in open_ports if p in nonstd and p not in risky])
-            if hit_risky:
-                lines.append(f"  ⚠️ Found risky port(s): {', '.join(map(str, hit_risky))}")
-            if hit_nonstd:
-                lines.append(f"  ⚠️ Found non-standard port(s): {', '.join(map(str, hit_nonstd))}")
-        lines.append("\nNote: Only scan hosts you are authorized to test.")
-        return "\n".join(lines)
-
-    except Exception as e:
-        logging.exception("Error in cmd_scan: %s", e)
-        return f"Error running scan: {e}"
 
 # ----------------------------------------------------
 # CLI Help + Loop
 # ----------------------------------------------------
 HELP = """\
 Commands:
-  - list high|critical|medium|low [and ...] [export/save/csv]
-  - show <asset_or_ip> [high|critical|...] [export/save/csv]
-  - scan <ip> [port1 port2 ...] [timeout=SECONDS] [workers=N]
+  - list high|critical|medium|low [export/save/csv]
+  - show <asset_or_ip> [export/save/csv]
+  - scan <ip> [port1 port2 ...]
+  - correlate firewall [export/save/csv]
 Examples:
-  > list high and critical
+  > list critical
   > show web01
-  > show 10.0.1.5 high export
-  > scan 10.0.1.5 8080 8443
+  > correlate firewall
 """
 
 if __name__ == "__main__":
@@ -311,15 +240,15 @@ if __name__ == "__main__":
             if q.lower() in ("help", "?"):
                 print(HELP); continue
 
-            ql = q.lower().strip()
-            if ql.startswith("scan "):
-                print("\n" + cmd_scan(q) + "\n"); continue
+            ql = q.lower()
+            if ql.startswith("correlate firewall"):
+                print("\n" + cmd_correlate_firewall(q) + "\n"); continue
             if any(s in ql for s in ("critical", "high", "medium", "low")) and "show" not in ql:
                 print("\n" + cmd_list_by_severity(q) + "\n"); continue
-            if ql.startswith("show ") or any("." in w for w in q.split()):
+            if ql.startswith("show "):
                 print("\n" + cmd_list_by_asset(q) + "\n"); continue
 
-            print("🤖 Try: 'list high and critical' or 'show web01' or 'scan 10.0.1.5'.\n")
+            print("🤖 Try: 'list high and critical', 'show web01', or 'correlate firewall'.\n")
 
         except KeyboardInterrupt:
             print("\n👋 Bye!"); break
