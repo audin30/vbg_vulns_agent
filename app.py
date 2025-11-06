@@ -212,7 +212,52 @@ def cmd_correlate_firewall(query: str) -> str:
     result += _maybe_export(query, correlated, "firewall_correlation")
     return result
 
-
+def cmd_correlate_vt(query: str) -> str:
+  """Enrich vulnerabilities and assets with VirusTotal threat intelligence."""
+  refresh_data_if_changed()
+  if df.empty:
+    return "No vulnerability data found."
+  
+  try:
+    from tools.threat_intel import enrich_dataset
+    
+    print("🧠 Querying VirusTotal for CVE and IP intelligence... this may take a moment.")
+    enriched = enrich_dataset(df)
+    
+    if enriched.empty:
+      return "No enrichment data found or VirusTotal API key missing."
+    
+    # Colorize output
+    def color_vt_hits(val):
+      try:
+        v = int(val)
+        if v > 10:
+          return f"\033[91m{v}\033[0m"   # red for high hits
+        elif v > 0:
+          return f"\033[93m{v}\033[0m"   # yellow for low hits
+        return str(v)
+      except:
+        return str(val)
+      
+    for col in ["vt_cve_hits", "vt_ip_malicious", "vt_ip_suspicious"]:
+      if col in enriched.columns:
+        enriched[col] = enriched[col].apply(color_vt_hits)
+        
+    display_cols = [
+      c for c in ["asset_id", "ip", "cve_id", "vt_cve_hits", "vt_ip_malicious", "vt_ip_suspicious"]
+      if c in enriched.columns
+    ]
+    
+    table = make_pretty_table(enriched, display_cols)
+    result = f"🧠 VirusTotal Threat Intelligence Correlation:\n\n{table}"
+    
+    result += _maybe_export(query, enriched, "vt_enrichment")
+    return result
+  
+  except Exception as e:
+    logging.exception("VT correlation failed: %s", e)
+    return f"❌ Error during VirusTotal enrichment: {e}"
+  
 # ----------------------------------------------------
 # CLI Help + Loop
 # ----------------------------------------------------
@@ -247,6 +292,8 @@ if __name__ == "__main__":
                 print("\n" + cmd_list_by_severity(q) + "\n"); continue
             if ql.startswith("show "):
                 print("\n" + cmd_list_by_asset(q) + "\n"); continue
+            if ql.startswith("correlate vt"):
+              print("\n" + cmd_correlate_vt(q) + "\n"); continue
 
             print("🤖 Try: 'list high and critical', 'show web01', or 'correlate firewall'.\n")
 
